@@ -1,0 +1,80 @@
+.c-toc {
+  counter-reset: toc;
+  background: white;
+  overflow: hidden;
+  float: right;
+  width: 17em;
+  margin-left:  2.5em;
+  border: solid 1px gray(90%);
+  border-radius: 4px;
+
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 0; right: 0;
+  .has-toc & { display: block; }
+
+  transition: opacity 50ms linear;
+  &.is-overlapping { opacity: 0.15; }
+  @include media-upto(1250px) {
+    display: none !important;
+  }
+}
+.c-toc__header {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  font-size: modular(-1);
+  height:    modular(6);
+  padding-left: modular(2);
+  font-weight: bold;
+  color: gray(35%);
+}
+.c-toc__body {
+  border-top: solid 1px gray(90%);
+  font-size: modular(-1);
+  padding:   modular(-2) modular(2);
+  line-height: 1.2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  $indent-base: 1em;
+
+  li ol {
+    border-left: dotted 1px gray(90%);
+    padding-left: 1.2em;
+  }
+  
+  a {
+    display: block;
+    padding: .5em 0;
+    color: gray(55%);
+    text-decoration: none;
+  }
+
+  a.is-visible {
+    color: $c-blue;
+  }
+
+  a:hover, a:focus {
+    color: black;
+    outline: none;
+  }
+
+  ol ol a {
+    font-size: .9em;
+    padding: (0.5em / .9) 0;
+  }
+
+  code {
+    word-wrap: break-word; 
+  }
+
+  .c-toc--numbered & > ol > li > a {
+    counter-increment: toc;
+    &:before {
+      content: counter(toc) ". ";
+    }
+  }
+}
+

@@ -1,0 +1,180 @@
+.c-article {
+  margin-bottom: 2.5em;
+}
+
+.c-article__browseissue {
+  @include clearfix;
+  color: white;
+  position: relative;
+}
+
+.c-article__browseissue__header__toggle {
+  white-space: nowrap;
+  text-align: right;
+}
+.c-article__browseissue__header__toggle__button {
+  color: inherit;
+  text-decoration: none;
+  &:hover, &:focus {
+    outline: none;
+    color: $c-orange;
+  }
+}
+
+.c-article__browseissue__header__toggle__button:after {
+  font-weight: bold;
+  content: "\2193";
+  display: inline-block;
+  transition: transform 500ms linear;
+  margin-left: .3em;
+  color: $c-orange;
+}
+
+.c-article__browseissue__header__toggle__button.is-toggled:after {
+  transform: rotate(180deg);
+}
+
+.c-article__browseissue__toc {
+  margin-bottom: 2em;
+  display: none;
+}
+
+.c-article__browseissue__toc__entry {
+  color: rgba(white, .7);
+  a { text-decoration: none; }
+}
+
+.c-article__browseissue__toc__entry.current .c-article__browseissue__toc__entry__title:before {
+  content: "\2192\00A0";
+  color: $c-orange;
+}
+
+.c-article__browseissue__toc__entry + .c-article__browseissue__toc__entry {
+  border-top: solid 1px rgba(#24ACF0, .35);
+}
+
+.c-article__browseissue__toc__entry a {
+  color: white;
+  display: block;
+  padding: 1em 0;
+  line-height: 1.2;
+  &:hover, &:focus {
+    outline: none;
+    .c-article__browseissue__toc__entry__title  { color: $c-orange; }
+    .c-article__browseissue__toc__entry__author { color: $c-orange; }
+  }
+}
+
+.c-article__browseissue__toc__entry__title {
+  font-weight: bold;
+}
+
+.c-article__browseissue__toc__entry__author-prefix {
+  color: rgba(white, .6);
+}
+
+
+.c-article__header {
+  color: white;
+}
+
+.c-article__swifttalk__promo {
+  border-top: solid 2px white;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .c-article-swifttalk-promo__label {
+    position: relative;
+    top: -0.3em;
+    margin-left: 1em;
+    display: inline-block;
+    @include smallcaps;
+    font-size: 0.7em;
+    border: solid 2px white;
+    border-radius: 3px;
+    line-height: 1;
+    padding: .4em .5em;
+  }
+
+  .c-article-swifttalk-promo__content {
+    margin-top: .5em;
+  }
+  .c-article-swifttalk-promo__title {
+    font-size: modular(2);
+    font-weight: bold;
+    display: inline-block;
+  }
+  .c-article-swifttalk-promo__synopsis {
+    font-size: modular(0);
+    max-width: $text-width;
+    line-height: 1.25;
+  }
+  .c-button--white {
+    color: map_get($c-swifttalk, stop);
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+@include bp-upto(m) {
+  .c-article-swifttalk-promo__button {
+    margin-top: 1em;
+  }
+}
+
+.c-article__browseissue__header__metadata__issue {
+  color: $c-orange;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover, &:focus {
+    border-bottom: solid 2px;
+    outline: none;
+  }
+
+}
+
+@include bp-upto(m) {
+  .c-article__browseissue__header__metadata {
+    .o-middot { display: none; }
+    .c-article__browseissue__header__metadata__date { display: block; }
+  }
+}
+
+.c-article__header__title {
+  @include fz-title;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 20%;
+}
+
+.c-article__header__byline {
+  color: white;
+  font-size: modular(1);
+  a {
+    text-decoration: none;
+    color: $c-orange;
+    font-weight: bold;
+    &:hover, &:focus {
+      border-bottom: solid 2px;
+      outline: none;
+    }
+  }
+}
+
+.c-article__header__browse {
+  display: none;
+}
+
+.c-article__body {
+  > *.is-overlapped {
+    position: relative;
+    z-index: 100;
+  }
+}

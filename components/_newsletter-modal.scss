@@ -1,0 +1,86 @@
+.c-newsletter-modal {
+  max-width: $text-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-newsletter-modal__img {
+  padding-right: spacing();
+}
+
+.c-newsletter-modal__img svg {
+  width: 8em;
+  height: auto;
+  #letter       { stroke: $c-orange; transform: translateY(0); }
+  #front-border { fill:   darken($c-orange, 12%); }
+  #back-border  { fill:   darken($c-orange, 12%); }
+}
+
+.c-newsletter-modal__header {
+  font-weight: bold;
+  font-size: modular(3);
+  color: $c-blue;
+}
+
+.c-newsletter-modal__prompt {
+  font-size: modular(1);
+  color: gray(30%);
+  font-weight: bold;
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
+
+.c-newsletter-modal__form {
+  position: relative;
+}
+
+.c-newsletter-modal__form__input,
+.c-newsletter-modal__form__button {
+  @include input-reset;
+  font-size: modular(3);
+  padding: .25em 0;
+  vertical-align: middle;
+}
+
+.c-newsletter-modal__form__input {
+  display: block;
+  width: 100%;
+  padding-right: 2em;
+  border-bottom: solid 2px $c-blue;
+  color: gray(30%);
+  &::placeholder {
+    color: gray(75%);
+  }
+  &:focus {
+    outline: none;
+    border-bottom-color: black;
+  }
+  &.is-invalid {
+    @include animate(shake);
+  }
+}
+
+.c-newsletter-modal__form__button {
+  position: absolute;
+  bottom: 0; right: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: $c-orange;
+  &:hover, &:focus {
+    color: black;
+    outline: none;
+  }
+}
+
+.c-newsletter-modal__alternative {
+  font-size: modular(-1);
+  margin-top: 1.5em;
+  color: gray(60%);
+  a {
+    color: $c-blue;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    color: black;
+  }
+}

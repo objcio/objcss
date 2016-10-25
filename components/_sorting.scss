@@ -1,0 +1,57 @@
+.c-sorting {
+
+}
+
+.c-sorting__group {
+  margin-bottom: $gutter/2;
+}
+
+.c-sorting__group__title {
+  color: black;
+  font-weight: bold;
+  line-height: 1.25;
+  color: $c-orange;
+  font-size: modular(-1);
+}
+
+.c-sorting__group__options {
+  padding-top: .2em;
+  font-size: modular(-1);
+}
+
+%c-sorting__group__option {
+
+}
+
+// Can be buttons or links
+%c-sorting__group__option > * {
+  appearance: none;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  
+  line-height: 1.1;
+  display: block;
+  width: 100%;
+  padding: .3em 0;
+  color: gray(50%);
+
+  &.is-active {
+    color: $c-blue;
+  }
+
+  &:hover, &:focus {
+    color: black;
+    outline: none;
+  }
+
+
+}
+
+.c-sorting__group__options > * {
+  @extend %c-sorting__group__option;
+}

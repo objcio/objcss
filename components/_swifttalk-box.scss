@@ -1,0 +1,99 @@
+.c-swifttalk-box {
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.c-swifttalk-video {
+  border: solid 0.5em rgba(0, 0, 0, 0.1);
+}
+
+.c-swifttalk-box__content {
+  margin-top: 2.5em;
+}
+
+.c-swifttalk-box__label {
+  display: inline-block;
+  @include smallcaps;
+  border: solid 2px white;
+  border-radius: 3px;
+  line-height: 1;
+  padding: .4em .4em .3em;
+}
+
+.c-swifttalk-box .c-swifttalk-box__button .c-button--white,
+.c-swifttalk-box .c-swifttalk-box__button .c-button--ghost:hover,
+.c-swifttalk-box .c-swifttalk-box__button .c-button--ghost:focus {
+  color: map-get($c-swifttalk, stop);
+}
+
+.c-swifttalk-box .c-swifttalk-box__button .c-button--white:hover,
+.c-swifttalk-box .c-swifttalk-box__button .c-button--white:focus {
+  color: white;
+}
+
+.c-swifttalk-box__title {
+  font-weight: bold;
+}
+
+.c-swifttalk-box__cover img {
+  border-width: .5em;
+}
+.c-swifttalk-box__title {
+  font-size: modular(6);
+  max-width: 12em;
+}
+.c-swifttalk-box__synopsis {
+  font-size: modular(1);
+  max-width: 26em;
+  line-height: 1.25;
+  margin-top: .5em;
+}
+.c-swifttalk-box__authors {
+  font-size: modular(-1);
+  margin-top: 1.5em;
+}
+.c-swifttalk-box__button {
+  margin-top: 2.5em;
+}
+@include bp-upto(m) {
+  .c-swifttalk-box__title {
+    font-size: modular(4);
+  }
+  .c-swifttalk-video {
+    margin-top: 2.5em;
+    border-width: .25em;
+  }
+}
+@include bp-upto(s) {
+  .c-swifttalk-box__title {
+    font-size: modular(3);
+  }
+  .c-swifttalk-box__synopsis {
+    font-size: modular(0);
+  }
+}

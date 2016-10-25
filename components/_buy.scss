@@ -1,0 +1,89 @@
+.c-buy {
+  border: solid 2px $c-blue;
+  border-radius: 5px;
+  background: white;
+}
+
+.c-buy__heading {
+  background: $c-blue;
+  @include smallcaps;
+  color: white;
+  padding: .65em/$smallcaps-factor;
+}
+
+.c-buy__option {
+  padding: 1em .65em;
+}
+
+.c-buy__option {
+  border-top: solid 2px $c-blue;
+}
+
+.c-buy__option__name,
+.c-buy__option__price {
+  @include bp-from(s) {
+    font-size: modular(-1);
+  }
+}
+.c-buy__option__description,
+.c-buy__option__suboption {
+  font-size: modular(-1);
+  @include bp-from(s) {
+   font-size: modular(-2);
+  }
+}
+
+.c-buy__option__name {
+  line-height: 1.1;
+  font-weight: bold;
+  margin-bottom: .25em;
+  color: gray(15%);
+  .discount {
+    color: $c-orange;
+  }
+}
+
+.c-buy__option__price {
+  line-height: 1;
+  padding: 0 .75em;
+  font-weight: bold;
+  .discount {
+    color: gray(60%);
+  }
+}
+
+.c-buy__option__description {
+  line-height: 1.2;
+  color: gray(60%);
+}
+
+.c-buy__option__button {
+  display: block;
+  background: $c-orange;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  @include smallcaps;
+  padding: .6em;
+  line-height: 1;
+  &:hover, &:focus {
+    background: $c-blue-darkest;
+    outline: none;
+  }
+}
+
+.c-buy__option__suboption {
+  line-height: 1.25;
+  color: gray(60%);
+  a { 
+    color: $c-blue;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    border-bottom: solid 1px;
+    outline: none;
+  }
+  & + & {
+    margin-top: .1em;
+  }
+}

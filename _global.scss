@@ -1,0 +1,48 @@
+html, body {
+  font-family: $type-sans;
+  font-size: $em-base;
+  @include bp-upto(xl) { font-size: $em-base - 2px; }
+  @include bp-upto(l)  { font-size: $em-base - 3px; }
+  @include bp-upto(m)  { font-size: $em-base - 4px; }
+  @include bp-upto(s)  { font-size: $em-base - 5px; }
+}
+
+button, input, select {
+  font-family: $type-sans;
+  font-size: inherit;
+}
+
+pre, code {
+  font-family: $type-mono;
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.no-js .no-js-hide,
+.hide { display: none !important; }
+
+body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  > main { flex: 1; }
+}
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 250ms;
+}

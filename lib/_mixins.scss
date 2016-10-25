@@ -1,0 +1,79 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@function svg-data-uri($svg) {
+  @return url('data:image/svg+xml;utf8,'+$svg);
+}
+
+@function arrow-pattern($fill: 'none', $arrows: 'none', $opacity: 1) {
+  $pattern: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 354"><g fill="none" fill-rule="evenodd"><path d="M0 0h440v354H0z" id="fill" fill="' + $fill + '"/><path id="arrows" fill="' + $arrows + '" fill-opacity="' + $opacity + '" d="M115 85l8-7-45.5-46L32 78l8 7 32-34v86h11V51l32 34zm97 7l8 7-45.5 46L129 99l8-7 32 34V40h11v86l32-34zm91 170l8-7-45.5-46-45.5 46 8 7 32-34v86h11v-86l32 34zm97 7l8 7-45.5 46-45.5-46 8-7 32 34v-86h11v86l32-34z"/></g></svg>';
+  @return svg-data-uri($pattern);
+}
+
+@mixin fz-title {
+  word-wrap: break-word;
+  font-size: modular(3);
+  @include bp-from(m) { font-size: modular(4); }
+  @include bp-from(l) { font-size: modular(6); }
+}
+
+@mixin animate($name, $duration: 1s) {
+  animation-fill-mode: both;
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin smallcaps($factor: $smallcaps-factor) {
+  font-size: $factor*1em;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  word-spacing:   .2em;
+  font-weight: bold;
+}
+
+@mixin input-reset($appearance: none) {
+  appearance: $appearance;
+  background: none;
+  border: none;
+  border-radius: 0;
+}
+
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin spacing-side($prop, $side, $value) {
+  @if $side == 'h' {
+    #{$prop}-left:    $value;
+    #{$prop}-right:   $value;
+  }
+  @else if $side == 'v' {
+    #{$prop}-top:     $value;
+    #{$prop}-bottom:  $value;
+  }
+  @else {
+    @error "Oops, spacing-side requires a $side of either 'h' or 'v'";
+  }
+}
+
+@mixin padding-h($value) { @include spacing-side('padding', 'h', $value); }
+@mixin padding-v($value) { @include spacing-side('padding', 'v', $value); }
+@mixin margin-h($value)  { @include spacing-side('margin',  'h', $value); }
+@mixin margin-v($value)  { @include spacing-side('margin',  'v', $value); }

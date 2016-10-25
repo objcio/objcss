@@ -1,0 +1,203 @@
+.c-footer {
+  background: $c-blue;
+  color: $c-blue-darker;
+}
+
+.c-footer__heading {
+  @include smallcaps;
+  color: $c-orange;
+  margin-bottom: modular(4);
+}
+
+.c-footer__promo {
+  
+}
+
+.c-footer__newsletter {
+  @include clearfix;
+}
+
+.c-footer__newsletter__title {
+  color: white;
+  font-weight: bold;
+  font-size: modular(3);
+}
+
+.c-footer__newsletter__para {
+  font-size: modular(1);
+  line-height: 1.25;
+  margin-top: .25em;
+}
+
+.c-footer__newsletter__form {
+  margin-top: 1.25em;
+  position: relative;
+}
+
+.c-footer__newsletter__form__input {
+  @include input-reset;
+  &::placeholder {
+    transition: color 100ms linear;
+    color: rgba(white, .25);
+  }
+
+  font-size: modular(3);
+
+  display: block;
+  float: left;
+  width: 100%;
+  padding-top: .25em;
+  padding-right: 1.3em;
+  padding-bottom: .25em;
+
+  transition: all 100ms linear;
+  color: white;
+
+  border-bottom: solid 2px $c-orange;
+
+  &:focus {
+    &::placeholder { color: rgba(white, .5); }
+    outline: none;
+  }
+  &.is-invalid {
+    @include animate(shake);
+  }
+}
+
+.c-footer__newsletter__form__button {
+  @include input-reset;
+
+  font-size: modular(3);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: inline-block;
+  width: 1em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+
+  cursor: pointer;
+  font-weight: bold;
+  text-align: right;
+  color: $c-orange;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    color: $c-blue-darkest;
+    outline: none;
+  }
+}
+
+
+.c-footer__book__cover {
+  width: 25%;
+  @include bp-from(s) { width: 20%; }
+  @include bp-from(m) { width: 27.5%; }
+}
+
+.c-footer__book__title {
+  color: white;
+  font-weight: bold;
+  line-height: 1.1;
+  font-size: modular(2);
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+.c-footer__book__synopsis {
+  margin-top: .5em;
+  line-height: 1.25;
+  max-width: 20em;
+}
+
+.c-footer__book__cta {
+  margin-top: 1.5em;
+  padding-bottom: .25em;
+}
+
+.c-footer__book__cta__link {
+  text-decoration: none;
+  color: $c-orange;
+  font-weight: bold;
+}
+
+.c-footer__issues {
+
+}
+
+.c-footer__issues__title {
+  @extend .c-footer__book__title;
+}
+
+.c-footer__issues__synopsis {
+  @extend .c-footer__book__synopsis;
+}
+
+.c-footer__issues__cta {
+  @extend .c-footer__book__cta;
+}
+
+
+.c-footer__baseboard {
+  background: $c-blue-darkest;
+  color: $c-blue;
+}
+
+.c-footer__baseboard__links {
+  font-size: modular(-1);
+}
+
+.c-footer__baseboard__links {
+  button {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    display: inline;
+    vertical-align: baseline;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  a, button {
+    color: inherit;
+    text-decoration: none;
+    padding: .25em 0;
+    display: inline-block;
+    &:hover, &:focus {
+      color: $c-orange;
+      outline: none;
+    }
+  }
+}
+
+.c-footer__baseboard__about__logo {
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+.c-footer__baseboard__about__logo svg {
+  height: 2em;
+  #letters { fill: $c-blue; }
+  #arrows  { fill: $c-orange; }
+}
+.c-footer__baseboard__about__text {
+  margin-top: 1em;
+  line-height: 1.25;
+  a {
+    color: $c-orange;
+    text-decoration: none;
+    &:hover,&:focus {
+      border-bottom: solid 1px;
+      outline: none;
+    }
+  }
+}

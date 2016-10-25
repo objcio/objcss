@@ -1,0 +1,47 @@
+.c-feature-issues {
+  color: gray(40%);
+  background-image:      arrow-pattern($arrows: '#FFFFFF'),
+                         linear-gradient(gray(95%), white);
+  background-size:       15em auto,
+                         auto auto;
+  background-position:   0% 0%,
+                         0% 0%;
+  background-repeat:     repeat,
+                         repeat;
+  background-attachment: fixed,
+                         scroll;
+  text-align: center;
+}
+
+.c-feature-issues__content {
+  padding-bottom: 35%;
+  @include bp-from(m) {
+    padding-bottom: 30%;
+  }
+}
+
+.c-feature-issues__heading {
+  font-size: modular(2);
+  font-weight: bold;
+  color: $c-blue;
+}
+
+.c-feature-issues__body {
+  line-height: 1.4;
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+  strong { font-weight: bold; }
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.c-feature-issues__cta a {
+  color: $c-orange;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover, &:focus {
+    outline: none;
+    color: black;
+  }
+}

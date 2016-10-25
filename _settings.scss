@@ -1,0 +1,57 @@
+$em-base: 20px;
+$modular-scale-base: 1em;
+$modular-scale-ratio: 1.2;
+$gutter: 2.5em;
+$wrap-width: 65em;
+$text-width: 38em;
+
+$smallcaps-factor: .8;
+
+$type-sans: AkkuratTT, sans-serif;
+$type-mono: AkkuratMono, Consolas, Monaco, monospace;
+
+$code-block-bg: gray(97%);
+$code-inline-bg: gray(95%);
+$code-radius:   5px;
+
+$c-blue:           hsl(200, 100%, 43%);
+$c-blue-shade:     hsl(200, 100%, 38%);
+$c-blue-darker:    hsl(200, 100%, 23%);
+$c-blue-darkest:   hsl(200, 100%, 18%);
+
+$c-purple: #8647B3;
+$c-orange: #FFA940;
+$c-invalid: #FF4040;
+
+$c-gray-bg: #f8f8f8;
+
+$c-book: (
+  functional-swift: (
+    start:  #F2B23B,
+    stop:   #D72E3C
+  ),
+  core-data: (
+    start: #009ace,
+    stop:  #293576
+  ),
+  advanced-swift: (
+    start: #F23F3F,
+    stop:  #FF4AA4
+  )
+);
+
+$c-swifttalk: (
+  start: #FB9254,
+  stop: #FA6B4A
+);
+
+$bps: (
+  xs: 400px,
+  s:  550px,
+  m:  700px,
+  l:  850px,
+  xl: 1000px
+);
+@function bp($width) {
+  @return map-get($bps, $width);
+}

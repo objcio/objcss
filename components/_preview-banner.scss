@@ -1,0 +1,71 @@
+.c-preview-banner {
+  background: gray(96%);
+  margin-top: 1.5em;
+  text-align: center;
+}
+.c-preview-banner--unspaced {
+  margin-top: 0;
+}
+
+.c-preview-banner__header,
+.c-preview-banner__body {
+  padding: 1em;
+}
+
+.c-preview-banner__header {
+  background: $c-orange;
+  color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.c-preview-banner__heading {
+  @include smallcaps;
+  font-size: .9em;
+}
+
+.c-preview-banner__description {
+  color: gray(30%);
+  a {
+    color: $c-blue;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    outline: none;
+    color: black;
+  }
+}
+
+.c-preview-banner__buttons {
+  .c-book-button {
+    margin-bottom: .6em;
+  }
+  .c-book-button:not(:last-child) {
+    margin-right: .6em;
+  }
+}
+
+.c-preview-banner__buttons + .c-preview-banner__description {
+  color: gray(50%);
+  font-size: modular(-1);
+  margin-top: .25em;
+}
+
+.c-preview-banner--centered {
+  text-align: center;
+}
+
+@include bp-upto(m) {
+  .c-preview-banner__buttons > .c-book-button {
+    display: block;
+    max-width: 15em;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+  .c-preview-banner__buttons {
+    padding-bottom: .2em;
+  }
+}

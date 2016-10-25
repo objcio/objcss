@@ -1,0 +1,124 @@
+.c-feature-books {
+  background: white;
+}
+
+
+.c-feature-books__heading {
+  font-size: modular(6);
+  font-weight: bold;
+  line-height: 1.1;
+  color: white;
+}
+
+.c-feature-books__prompt {
+  font-size: modular(1);
+  margin-top: .5em;
+  font-weight: bold;
+  color: $c-blue-darkest;
+}
+
+.c-feature-book__link {
+  text-decoration: none;
+  outline: solid 6px transparent;
+}
+
+.c-feature-book__wrapper {
+  position: relative;
+  padding-bottom: 152.23%;
+  > * {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.c-feature-book__content {
+  padding: spacing("-");
+  background: white;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.c-feature-book__cover {
+  z-index: 2;
+}
+
+.c-feature-book__sale {
+  font-size: modular(-1);
+  display: table;
+
+  z-index: 3;
+  top:   -1.25em;
+  right: -1.25em;
+  bottom: auto;
+  left: auto;
+
+  width: 4.5em;
+  height: 4.5em;
+  padding: .5em;
+
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 50%;
+
+  background: $c-orange;
+  color: white;
+
+  > * {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    line-height: 1.25;
+    vertical-align: middle;
+  }
+}
+
+
+.c-feature-book__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.c-feature-book__link:hover,
+.c-feature-book__link:focus {
+  // Can't use just outline-color...
+  // For some reason, Chrome makes it the color
+  // of visited links
+  outline: solid 6px $c-orange;
+  color: $c-orange;
+  border: solid 0px $c-orange;
+}
+
+.c-feature-book__title {
+  font-size: modular(1);
+
+  min-height: 2.2em;
+  margin-bottom: 1em;
+
+  font-weight: bold;
+  line-height: 1.1;
+  color: $c-blue;
+}
+
+.c-feature-book__authors {
+  margin-bottom: 1em;
+
+  line-height: 1.2;
+  color: gray(15%);
+}
+
+.c-feature-book__note {
+  color: gray(50%);
+}
+
+.c-feature-book__button {
+  margin-top: 1em;
+  border-radius: 6px;
+  background: white;
+  padding: 3px;
+}

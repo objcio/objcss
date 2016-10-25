@@ -1,0 +1,56 @@
+$arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
+
+// Base arrow pattern
+%bg-pattern {
+  background-size:       15em auto;
+  background-position:   center -1em;
+  background-attachment: fixed;
+}
+
+// 1. Solid background patterns
+// 1.1. Blue background, darker blue arrows.
+.bg-pattern-blue {
+  @extend %bg-pattern;
+  background-color: $c-blue;
+  background-image: arrow-pattern($arrows: $c-blue-shade);
+}
+// 1.2. Dark blue background, blue arrows
+.bg-pattern-blue-reverse {
+  @extend %bg-pattern;
+  background-color: $c-blue-shade;
+  background-image: arrow-pattern($arrows: $c-blue);
+}
+
+
+// 2. Translucent black arrows, used to build patterns over another background
+.bg-pattern-shade {
+  @extend %bg-pattern;
+  background-image: $arrow-pattern-shade;
+}
+
+
+
+// 3. Gradient patterns
+.bg-pattern-gradient {
+  background-size:       15em auto,   auto auto;
+  background-position:   center -1em, top left;
+  background-attachment: fixed,       scroll;
+
+  @mixin bg-pattern-gradient($start, $stop) {
+    background-color: $stop;
+    background-image: $arrow-pattern-shade, linear-gradient($start, $stop);
+  }
+
+  // 3.1 For Swift Talk
+  &--swifttalk {
+    @include bg-pattern-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
+  }
+
+  // 3.2. For each book
+  @each $book-slug, $book-gradient in $c-book {
+    &--#{$book-slug} {
+      @include bg-pattern-gradient(map-get($book-gradient, start), map-get($book-gradient, stop));
+    }
+  }
+
+}

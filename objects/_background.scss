@@ -1,0 +1,13 @@
+.bg-no-repeat { background-repeat: no-repeat; }
+
+.bg-cover   { background-size: cover; }
+.bg-contain { background-size: contain; }
+
+.bg-stretch   { background-size: 100% 100%; }
+.bg-stretch-x { background-size: 100% auto; }
+.bg-stretch-y { background-size: auto 100%; }
+
+.bg-position-n { background-position: top    center;}
+.bg-position-s { background-position: bottom center;}
+.bg-position-e { background-position: right  center;}
+.bg-position-w { background-position: left   center;}

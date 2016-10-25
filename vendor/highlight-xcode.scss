@@ -1,0 +1,184 @@
+/*
+
+XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
+
+*/
+
+.hljs, .highlight {
+
+  .pyg-c,
+  .pyg-cm,
+  .pyg-cp,
+  .pyg-c1,
+  .pyg-cs,
+  .hljs-comment,
+  .hljs-template_comment,
+  .hljs-javadoc,
+  .hljs-comment * {
+    /* 1 'green' */ color: #49992f; /*rgb(0,106,0)*/
+  }
+
+  .pyg-k,
+  .pyg-kc,
+  .pyg-kd,
+  .pyg-kn,
+  .pyg-kp,
+  .pyg-kr,
+  .pyg-kt,
+  .hljs-keyword,
+  .hljs-literal,
+  .hljs-nginx .hljs-title {
+    /* 2 'purple' */ color: rgb(170,13,145);
+  }
+  .hljs-method,
+  .hljs-list .hljs-title,
+  .hljs-tag .hljs-title,
+  .hljs-setting .hljs-value,
+  .hljs-winutils,
+  .hljs-tex .hljs-command,
+  .hljs-http .hljs-title,
+  .hljs-request,
+  .hljs-status {
+    color: #008;
+  }
+
+  .hljs-envvar,
+  .hljs-tex .hljs-special {
+    color: #660;
+  }
+
+  .pyg-s,
+  .pyg-sb,
+  .pyg-sc,
+  .pyg-sd,
+  .pyg-s2,
+  .pyg-se,
+  .pyg-sh,
+  .pyg-si,
+  .pyg-sx,
+  .pyg-sr,
+  .pyg-s1,
+  .pyg-ss,
+  .hljs-string {
+    /* 3 'red' */ color: #ef4134;
+  }
+  .hljs-tag .hljs-value,
+  .hljs-cdata,
+  .hljs-filter .hljs-argument,
+  .hljs-attr_selector,
+  .hljs-apache .hljs-cbracket,
+  .hljs-date,
+  .hljs-regexp {
+    color: #080;
+  }
+
+  .pyg-mb,
+  .pyg-mf,
+  .pyg-mh,
+  .pyg-mi,
+  .pyg-mo,
+  .hljs-sub .hljs-identifier,
+  .hljs-pi,
+  .hljs-tag,
+  .hljs-tag .hljs-keyword,
+  .hljs-decorator,
+  .hljs-ini .hljs-title,
+  .hljs-shebang,
+  .hljs-prompt,
+  .hljs-hexcolor,
+  .hljs-rules .hljs-value,
+  .hljs-css .hljs-value .hljs-number,
+  .hljs-symbol,
+  .hljs-symbol .hljs-string,
+  .hljs-number,
+  .hljs-css .hljs-function,
+  .hljs-clojure .hljs-title,
+  .hljs-clojure .hljs-built_in {
+    /* 4 'blue' */ color: #0000aa; /*rgb(28,0,207)*/
+  }
+
+
+  .pyg-bp,
+  .hljs-class .hljs-title,
+  .hljs-haskell .hljs-type,
+  .hljs-smalltalk .hljs-class,
+  .hljs-javadoctag,
+  .hljs-yardoctag,
+  .hljs-phpdoc,
+  .hljs-typename,
+  .hljs-tag .hljs-attribute,
+  .hljs-doctype,
+  .hljs-class .hljs-id,
+  .hljs-built_in,
+  .hljs-setting,
+  .hljs-params,
+  .hljs-clojure .hljs-attribute {
+    /* 5 'dark purple' */ color: #c56021; /*rgb(92,38,153)*/
+  }
+
+  .hljs-variable {
+   /* 6 'teal' */ color: #23a9db; /*rgb(63,110,116)*/
+  }
+  .hljs-css .hljs-tag,
+  .hljs-rules .hljs-property,
+  .hljs-pseudo,
+  .hljs-subst {
+    color: #222222; /*#000*/
+  }
+
+  .hljs-css .hljs-class, .hljs-css .hljs-id {
+    color: #9B703F;
+  }
+
+  .hljs-value .hljs-important {
+    color: #ff7700;
+    font-weight: bold;
+  }
+
+  .hljs-rules .hljs-keyword {
+    color: #C5AF75;
+  }
+
+  .hljs-annotation,
+  .hljs-apache .hljs-sqbracket,
+  .hljs-nginx .hljs-built_in {
+    color: #9B859D;
+  }
+
+  .hljs-preprocessor,
+  .hljs-preprocessor * {
+    /* 7 'brown' */ color: #8d4228; /*rgb(100,56,32)*/
+  }
+
+  .hljs-tex .hljs-formula {
+    background-color: #EEE;
+    font-style: italic;
+  }
+
+  .hljs-diff .hljs-header,
+  .hljs-chunk {
+    color: #808080;
+    font-weight: bold;
+  }
+
+  .hljs-diff .hljs-change {
+    background-color: #BCCFF9;
+  }
+
+  .hljs-addition {
+    background-color: #BAEEBA;
+  }
+
+  .hljs-deletion {
+    background-color: #FFC8BD;
+  }
+
+  .hljs-comment .hljs-yardoctag {
+    font-weight: bold;
+  }
+
+  .hljs-method .hljs-id {
+    color: #222222; /*#000*/
+  }
+
+}

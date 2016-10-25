@@ -1,0 +1,57 @@
+@mixin media-upto($end) {
+  @media screen and (max-width: ($end - 1)) {
+    @content;
+  }
+}
+
+@mixin media-btwn($start, $end) {
+  @media screen and (min-width: $start) and (max-width: ($end - 1)) {
+    @content;
+  }
+}
+
+@mixin media-from($start) {
+  @media screen and (min-width: $start) {
+    @content;
+  }
+}
+@mixin bp-from($bp)        { @include media-from(bp($bp))               { @content; } }
+@mixin bp-upto($bp)        { @include media-upto(bp($bp))               { @content; } }
+@mixin bp-btwn($bp1, $bp2) { @include media-btwn(bp($bp1), bp($bp2))    { @content; } }
+
+@mixin each-bp($unprefixed: true, $min-width: true, $max-width: true) {
+  $each-bp:       '.'    !global;
+  $each-bp-name:  'base' !global;
+
+  // Non-modified declaration?
+  @if $unprefixed {
+    @content;
+  }
+
+  // Min-width breakpoints
+  @if $min-width {
+    @each $bp, $size in $bps {
+      // Needs double escape as we want to output \| to the CSS file
+      $each-bp:      '.#{$bp}\\+\\|' !global;
+      $each-bp-name: $bp             !global;
+      @include bp-from($bp) {
+        @content;
+      }
+    }
+  }
+
+  // Max-width breakpoints
+  @if $max-width {
+    @for $i from length($bps) through 1 {
+      $bp-pair: nth($bps, $i);
+      $bp:      nth($bp-pair, 1);
+      
+      // Needs double escape as we want to output \| to the CSS file
+      $each-bp:      '.#{$bp}-\\|' !global;
+      $each-bp-name: $bp           !global;
+      @include bp-upto($bp) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@function gray($percentage) {
+  @return hsl(0, 0%, $percentage);
+}
+
+// https://github.com/adambom/Sass-Math/blob/master/math.scss
+@function power ($x, $n) {
+  $ret: 1;
+  
+  @if $n > 0 {
+    @for $i from 1 through $n {
+      $ret: $ret * $x;
+    } 
+  } 
+  @elseif $n < 0 {
+    @for $i from $n to 0 {
+      $ret: $ret / $x;
+    }
+  }
+  
+  @return $ret;
+}
+
+@function modular($factor) {
+  @return $modular-scale-base * power($modular-scale-ratio, $factor);
+}
+
+@function double($number)    { @return $number * 2; }
+@function quadruple($number) { @return $number * 4; }
+@function half($number)      { @return $number / 2; }
+@function quarter($number)   { @return $number / 4; }

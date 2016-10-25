@@ -1,0 +1,85 @@
+.c-preview-header {
+  color: white;
+  overflow: hidden;
+}
+
+.c-preview-header__logo {
+  width: 4em;
+  display: inline-block;
+  vertical-align: middle;
+  svg {
+    width: auto;
+    height: 1.6em;
+    g[fill] {
+      fill: white;
+    }
+  }
+  &:hover, &:focus {
+    outline: none;
+    svg g[fill] {
+      fill: transparentize(black, .25);
+    }
+  }
+}
+
+.c-preview-header__preview {
+  display: inline-block;
+  @include smallcaps;
+  border-radius: 4px;
+  line-height: 1;
+  padding: .4em .35em .3em;
+  vertical-align: middle;
+  color: transparentize(black, .3);
+  border: solid 2px;
+}
+
+.c-preview-header__more {
+  color: white;
+  text-decoration: none;
+  &:focus, &:hover {
+    outline: none;
+    border-bottom: solid 1px;
+  }
+}
+
+.c-preview-header__body {
+  text-align: center;
+}
+
+.c-preview-header__figure {
+  min-height: 1px;
+  position: relative;
+  img {
+    border: solid .25em rgba(black, .1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+.c-preview-header__title {
+  font-size: modular(4);
+  font-weight: bold;
+}
+
+.c-preview-header__byline {
+  margin-top: .75em;
+  color: transparentize(black, 0.4);
+}
+
+.c-preview-header__buttons > *:not(:last-child) {
+  margin-right: 1.5em;
+}
+
+@include bp-upto(l) {
+  .c-preview-header__buttons > .c-book-button {
+    display: block;
+    max-width: 15em;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+}

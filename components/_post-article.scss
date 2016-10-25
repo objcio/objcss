@@ -1,0 +1,168 @@
+.c-post-article {
+  background: $c-gray-bg;
+}
+
+.c-post-article__header {
+  @include smallcaps;
+  color: $c-orange;
+  margin-bottom: modular(4);
+}
+
+.c-post-article__header--secondary {
+  color: gray(50%);
+}
+
+.c-post-article__issue {
+
+}
+
+.c-post-article__issue__header {
+  display: inline-block;
+  margin-bottom: modular(4);
+  text-decoration: none;
+}
+
+.c-post-article__issue__header__name {
+  font-size: modular(2);
+  @include media-from(s) { font-size: modular(3); }
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1.1;
+  display: inline-block;
+}
+
+.c-post-article__issue__header__date {
+  color: gray(50%);
+  text-decoration: none;
+  margin-top: .25em;
+}
+
+.c-post-article__issue__header:hover,
+.c-post-article__issue__header:focus {
+  outline: none;
+  .c-post-article__issue__header__name {
+    text-decoration: underline;
+  }
+}
+
+.c-post-article__issue__articles {
+  font-size: modular(0);
+}
+
+.c-post-article__issue__article {
+  line-height: 1.25;
+}
+
+.c-post-article__issue__article.current .c-post-article__issue__article__name:before {
+  content: "\2192\00A0";
+  font-weight: bold;
+  color: $c-orange;
+}
+
+.c-post-article__issue__article + .c-post-article__issue__article {
+  margin-top: 1.2em;
+}
+
+.c-post-article__issue__article a {
+  text-decoration: none;
+  display: block;
+}
+
+.c-post-article__issue__article__name {
+  color: $c-blue;
+  .c-post-article__issue__article a:visited & {
+    color: $c-purple;
+  }
+}
+
+.c-post-article__issue__article__author {
+  color: gray(50%);
+  margin-top: .1em;
+  font-size: modular(-1);
+  white-space: nowrap;
+}
+
+.c-post-article__issue__article__author-prefix {
+  opacity: 0.5;
+}
+
+.c-post-article__issue__article a:hover,
+.c-post-article__issue__article a:focus {
+  outline: none;
+  .c-post-article__issue__article__name {
+    color: black;
+  }
+  .c-post-article__issue__article__author {
+    color: gray(30%);
+  }
+}
+
+.c-post-article__issue__link {
+  display: inline-block;
+  color: $c-blue;
+  font-weight: bold;
+  margin-top: modular(2);
+  text-decoration: none;
+
+  &:after {
+    content: "\00A0\2192";
+  }
+
+  &:hover, &:focus {
+    border-bottom: solid 2px;
+    outline: none;
+  }
+}
+
+.c-post-article__archive__year__name {
+  font-size: modular(1);
+  font-weight: bold;
+  margin-bottom: modular(2);
+  color: black;
+}
+
+.c-post-article__archive__year__issues {
+  font-size: modular(-1);
+}
+
+.c-post-article__archive__year__issue {
+
+}
+
+.c-post-article__archive__year__issue a {
+  text-decoration: none;
+  display: block;
+  padding-top: .6em;
+  padding-bottom: .6em;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+.c-post-article__archive__year__issue__number {
+  min-width: 2.5em;
+  color: gray(50%);
+  display: block;
+  float: left;
+  + * {
+    display: block;
+    overflow: hidden;
+  }
+}
+
+.c-post-article__archive__year__issue__number__symbol {
+  opacity: 0.5;
+}
+
+.c-post-article__archive__year__issue__name {
+  color: $c-blue;
+  line-height: 1.2;
+}
+
+.c-post-article__archive__year__issue a:hover,
+.c-post-article__archive__year__issue a:focus {
+  outline: none;
+  .c-post-article__archive__year__issue__name {
+    color: black;
+  }
+}
