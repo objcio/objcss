@@ -1,0 +1,23 @@
+.ratio {
+  $ratios: (16 10, 1 1);
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 0%;
+
+  @each $ratio in $ratios {
+    $w: nth($ratio, 1);
+    $h: nth($ratio, 2);
+    &--#{$w}\/#{$h} {
+      padding-bottom: percentage(nth($ratio,2) / nth($ratio, 1));
+    }
+  }
+}
+
+.ratio__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
