@@ -1,0 +1,5 @@
+@include each-bp {
+  #{$each-bp}block        { display: block; }
+  #{$each-bp}inline       { display: inline; }
+  #{$each-bp}inline-block { display: inline-block; }
+}
