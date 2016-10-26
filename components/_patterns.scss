@@ -2,7 +2,7 @@ $arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
 
 // Base arrow pattern
 %bg-pattern {
-  background-size:       15em auto;
+  background-size:       em(300) em(240);
   background-position:   center -1em;
   background-attachment: fixed;
 }
@@ -32,9 +32,9 @@ $arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
 
 // 3. Gradient patterns
 .bg-pattern-gradient {
-  background-size:       15em auto,   auto auto;
-  background-position:   center -1em, top left;
-  background-attachment: fixed,       scroll;
+  background-size:       em(300) em(240), auto auto;
+  background-position:   center -1em,     top left;
+  background-attachment: fixed,           scroll;
 
   @mixin bg-pattern-gradient($start, $stop) {
     background-color: $stop;

@@ -1,3 +1,20 @@
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
 @function gray($percentage) {
   @return hsl(0, 0%, $percentage);
 }
@@ -5,18 +22,18 @@
 // https://github.com/adambom/Sass-Math/blob/master/math.scss
 @function power ($x, $n) {
   $ret: 1;
-  
+
   @if $n > 0 {
     @for $i from 1 through $n {
       $ret: $ret * $x;
-    } 
-  } 
+    }
+  }
   @elseif $n < 0 {
     @for $i from $n to 0 {
       $ret: $ret / $x;
     }
   }
-  
+
   @return $ret;
 }
 
