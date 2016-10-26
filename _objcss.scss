@@ -12,7 +12,6 @@
 @import 'objects/layout';
 @import 'objects/objects';
 @import 'objects/modal';
-@import 'objects/background';
 
 // Ready-made components, with a specific HTML structure
 @import 'components/buttons';
@@ -52,6 +51,7 @@
 
 // Utility classes
 @import 'utilities/spacing';
+@import 'utilities/background';
 @import 'utilities/utilities';
 
 // 3rd-party code
