@@ -1,11 +1,3 @@
-@function spacing($modifier:''){
-  @if ($modifier == '')   { @return $gutter*1; }
-  @if ($modifier == '+')  { @return $gutter*1.2; }
-  @if ($modifier == '++') { @return $gutter*1.4; }
-  @if ($modifier == '-')  { @return $gutter*0.6; }
-  @if ($modifier == '--') { @return $gutter*0.45; }
-}
-
 @mixin make-spacing {
 
   $namespace: '';
@@ -27,19 +19,19 @@
               ('\\+'    spacing('+')),
               ('\\+\\+' spacing('++')),
               ('0'      0);
-    
+
   // margin or padding?
   @each $prop-alias, $prop-name in $props {
 
     // top, left, right, ...?
     @each $side-alias, $prop-suffixes in $sides {
-      
+
       // base, -, +, 0, ...?
       @each $variant-alias, $variant-value in $variants {
-        
+
         // DECLARATION
         .#{$namespace}#{$prop-alias}#{$side-alias}#{$variant-alias} {
-          
+
           // for compound-rules
           @each $prop-suffix in $prop-suffixes {
             #{$prop-name}#{$prop-suffix}: $variant-value !important;

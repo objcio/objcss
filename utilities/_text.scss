@@ -1,0 +1,22 @@
+.ms1 { font-size: modular(1);}
+.ms2 { font-size: modular(2);}
+.ms3 { font-size: modular(3);}
+.ms4 { font-size: modular(4);}
+.ms5 { font-size: modular(5);}
+.ms6 { font-size: modular(6);}
+
+.ms-1 { font-size: modular(-1);}
+.ms-2 { font-size: modular(-2);}
+
+.bold   { font-weight: bold; }
+.italic { font-style: italic; }
+
+.no-decoration { text-decoration: none; }
+.underline     { text-decoration: underline; }
+.line-through  { text-decoration: line-through; }
+
+.smallcaps { @include smallcaps; }
+
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }

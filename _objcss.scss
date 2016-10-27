@@ -9,11 +9,10 @@
 @import 'global';
 
 // Primary building blocks
-@import 'objects/spacing';
 @import 'objects/layout';
 @import 'objects/objects';
 @import 'objects/modal';
-@import 'objects/background';
+@import 'objects/ratio';
 
 // Ready-made components, with a specific HTML structure
 @import 'components/buttons';
@@ -51,8 +50,13 @@
 @import 'components/swifttalk-box';
 @import 'components/patterns';
 
-// Utility classes which override everything
+// Utility classes
+@import 'utilities/display';
+@import 'utilities/spacing';
+@import 'utilities/background';
+@import 'utilities/text';
 @import 'utilities/utilities';
+@import 'utilities/color';
 
 // 3rd-party code
 @import 'vendor/highlight-xcode';
