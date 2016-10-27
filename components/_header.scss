@@ -129,8 +129,8 @@ $header-logo-big-height: 2em;
 
 @include bp-upto(l) {
   .c-header       { padding-left: 0; padding-right: 0; }
-  .c-header__row  { padding-left: spacing('--'); padding-right: spacing('--'); }
+  .c-header__row  { padding-left: spacing(); padding-right: spacing(); }
   .c-header__nav  { white-space: nowrap; }
-  .c-header__home { padding-right: spacing('-'); }
+  .c-header__home { padding-right: spacing('+'); }
   .c-header__nav--primary .c-header__nav__list__item { margin-right: 1.5em; }
 }

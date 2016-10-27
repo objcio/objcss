@@ -4,5 +4,5 @@
 .c-blog-heading {
   @include smallcaps;
   color: $c-orange;
-  margin-bottom: spacing();
+  margin-bottom: spacing('++');
 }

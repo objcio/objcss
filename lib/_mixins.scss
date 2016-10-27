@@ -58,22 +58,3 @@
   position: absolute;
   width: 1px;
 }
-
-@mixin spacing-side($prop, $side, $value) {
-  @if $side == 'h' {
-    #{$prop}-left:    $value;
-    #{$prop}-right:   $value;
-  }
-  @else if $side == 'v' {
-    #{$prop}-top:     $value;
-    #{$prop}-bottom:  $value;
-  }
-  @else {
-    @error "Oops, spacing-side requires a $side of either 'h' or 'v'";
-  }
-}
-
-@mixin padding-h($value) { @include spacing-side('padding', 'h', $value); }
-@mixin padding-v($value) { @include spacing-side('padding', 'v', $value); }
-@mixin margin-h($value)  { @include spacing-side('margin',  'h', $value); }
-@mixin margin-v($value)  { @include spacing-side('margin',  'v', $value); }

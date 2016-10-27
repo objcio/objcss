@@ -1,7 +1,6 @@
 $em-base: 20px;
 $modular-scale-base: 1em;
 $modular-scale-ratio: 1.2;
-$gutter: 2.5em;
 $wrap-width: 65em;
 $text-width: 38em;
 
@@ -24,6 +23,20 @@ $c-orange: #FFA940;
 $c-invalid: #FF4040;
 
 $c-gray-bg: #f8f8f8;
+
+$gutter: 2.5em;
+
+$spacings: (
+  '++': $gutter * 1,  // 2.5
+  '+':  $gutter * .6, // 1.5
+  '':   $gutter * .4, // 1
+  '-':  $gutter * .2, // .5
+  '--': $gutter * .1, // .25
+);
+
+@function spacing($modifier: '') {
+  @return map-get($spacings, $modifier);
+}
 
 $c-book: (
   functional-swift: (

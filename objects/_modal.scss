@@ -21,7 +21,7 @@ body.has-modal > *:not(.o-modal) {
   right: 0;
   z-index: 9000;
   background: rgba(white, 0.85);
-  padding: spacing();
+  padding: spacing('++');
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
