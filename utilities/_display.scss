@@ -3,3 +3,6 @@
   #{$each-bp}inline       { display: inline; }
   #{$each-bp}inline-block { display: inline-block; }
 }
+
+.js .js-hide,
+.no-js .no-js-hide { display: none; }
