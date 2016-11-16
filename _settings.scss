@@ -27,11 +27,12 @@ $c-gray-bg: #f8f8f8;
 $gutter: 2.5em;
 
 $spacings: (
-  '++': $gutter * 1,  // 2.5
-  '+':  $gutter * .6, // 1.5
-  '':   $gutter * .4, // 1
-  '-':  $gutter * .2, // .5
-  '--': $gutter * .1, // .25
+  '++':  $gutter * 1,   // 2.5
+  '+':   $gutter * .6,  // 1.5
+  '':    $gutter * .4,  // 1
+  '-':   $gutter * .2,  // .5
+  '--':  $gutter * .1,  // .25
+  '---': $gutter * .06, // .15
 );
 
 @function spacing($modifier: '') {
