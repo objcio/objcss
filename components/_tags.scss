@@ -1,0 +1,17 @@
+.tag {
+  display: inline-block;
+  border-radius: 9999px;
+  background: gray(70%);
+  color: white;
+  line-height: 1.1;
+  text-decoration: none;
+  font-weight: bold;
+  padding: .3em .6em .35em;
+  vertical-align: middle;
+}
+
+a.tag:hover,
+a.tag:focus {
+  background: gray(30%);
+  outline: none;
+}

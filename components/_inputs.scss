@@ -1,0 +1,46 @@
+.text-input {
+  @include input-reset;
+  border-top: solid 2px transparent;
+  border-bottom: solid 2px $c-blue;
+  color: gray(30%);
+  border-radius: 0;
+  padding: spacing('--') 0;
+
+  &::placeholder {
+    color: gray(75%);
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom-color: $c-orange;
+  }
+
+  &.is-invalid {
+    @include animate(shake);
+  }
+
+}
+
+.text-input--naked {
+  border-bottom: none;
+}
+
+.button-input {
+  @include input-reset;
+
+  padding: spacing('--') spacing('-');
+
+  cursor: pointer;
+  background: $c-blue;
+  border: solid 2px $c-blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    border-color: $c-orange;
+    background: $c-orange;
+    outline: none;
+  }
+}

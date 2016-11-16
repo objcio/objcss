@@ -1,0 +1,13 @@
+$logo-width-height-ratio: 528 / 158;
+
+.logo {
+  height: 1.85em;
+  width: 1.85em * $logo-width-height-ratio;
+}
+
+a.logo:hover,
+a .logo:hover {
+  [fill] {
+    fill: orange;
+  }
+}
