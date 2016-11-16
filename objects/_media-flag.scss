@@ -1,0 +1,31 @@
+@include each-bp() {
+  #{$each-bp}media                       { overflow: hidden; }
+  #{$each-bp}media__image                { float: left; }
+  #{$each-bp}media__body                 { overflow: hidden; }
+  #{$each-bp}media--right  .media__image { float: right; }
+  #{$each-bp}media__image--gutter        { margin-right: $gutter;   }
+  #{$each-bp}media__image--mr            { margin-right: spacing(); }
+}
+
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag__image,
+.flag__body {
+  display: table-cell;
+  vertical-align: middle;
+  .flag--top    & { vertical-align: top; }
+  .flag--bottom & { vertical-align: bottom; }
+}
+
+.flag__image > img,
+.flag__image > svg {
+  display: block;
+  max-width: none;
+}
+
+.flag__body {
+  width: 100%;
+}
