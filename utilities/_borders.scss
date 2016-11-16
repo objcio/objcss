@@ -1,0 +1,54 @@
+.border      { border-style: solid; }
+
+.border-1    { border-width: 1px; }
+.border-2    { border-width: 2px; }
+.border-3    { border-width: 3px; }
+
+.radius-2    { border-radius: 2px; }
+.radius-3    { border-radius: 3px; }
+.radius-4    { border-radius: 4px; }
+.radius-5    { border-radius: 5px; }
+.radius-6    { border-radius: 6px; }
+
+.border-top    { border-top-style: solid; }
+.border-right  { border-right-style: solid; }
+.border-bottom { border-bottom-style: solid; }
+.border-left   { border-left-style: solid; }
+
+.radius-full { border-radius: 999px; }
+
+.border-color-current       { color: currentColor; }
+.border-color-inherit       { color: inherit; }
+
+.border-color-blue          { color: $c-blue; }
+.border-color-blue-shade    { color: $c-blue-shade; }
+.border-color-blue-dark     { color: $c-blue-dark; }
+.border-color-blue-darker   { color: $c-blue-darker; }
+.border-color-blue-darkest  { color: $c-blue-darkest; }
+.border-color-purple        { color: $c-purple; }
+.border-color-orange        { color: $c-orange; }
+.border-color-orange-dark   { color: $c-orange-dark; }
+.border-color-orange-darker { color: $c-orange-darker; }
+.border-color-invalid       { color: $c-invalid; }
+
+.border-color-black         { color: black; }
+.border-color-white         { color: white; }
+
+.border-color-gray-10       { color: gray(10%); }
+.border-color-gray-15       { color: gray(15%); }
+.border-color-gray-20       { color: gray(20%); }
+.border-color-gray-25       { color: gray(25%); }
+.border-color-gray-30       { color: gray(30%); }
+.border-color-gray-35       { color: gray(35%); }
+.border-color-gray-40       { color: gray(40%); }
+.border-color-gray-45       { color: gray(45%); }
+.border-color-gray-50       { color: gray(50%); }
+.border-color-gray-55       { color: gray(55%); }
+.border-color-gray-60       { color: gray(60%); }
+.border-color-gray-65       { color: gray(65%); }
+.border-color-gray-70       { color: gray(70%); }
+.border-color-gray-75       { color: gray(75%); }
+.border-color-gray-80       { color: gray(80%); }
+.border-color-gray-85       { color: gray(85%); }
+.border-color-gray-90       { color: gray(90%); }
+.border-color-gray-95       { color: gray(95%); }

@@ -52,10 +52,18 @@
 
 // Utility classes
 @import 'utilities/display';
+@import 'utilities/sizing';
 @import 'utilities/spacing';
-@import 'utilities/background';
 @import 'utilities/text';
 @import 'utilities/color';
+@import 'utilities/alignment';
+@import 'utilities/background';
+@import 'utilities/borders';
+@import 'utilities/svg';
+@import 'utilities/effects';
+@import 'utilities/hover';
+@import 'utilities/flex';
+@import 'utilities/icons';
 
 // 3rd-party code
 @import 'vendor/highlight-xcode';

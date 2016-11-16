@@ -1,0 +1,62 @@
+@include each-bp($max-width: false) {
+
+  #{$each-bp}flex { display: flex; }
+  #{$each-bp}inline-flex { display: inline-flex; }
+
+  /* 1. Fix for Chrome 44 bug.
+   * https://code.google.com/p/chromium/issues/detail?id=506893 */
+  #{$each-bp}flex-auto {
+    flex: 1 1 auto;
+    min-width: 0; /* 1 */
+    min-height: 0; /* 1 */
+  }
+
+  #{$each-bp}flex-grow { flex: 1 0 auto; }
+  #{$each-bp}flex-none { flex: none; }
+
+  #{$each-bp}flex-column     { flex-direction: column; }
+  #{$each-bp}flex-row        { flex-direction: row; }
+  #{$each-bp}flex-wrap       { flex-wrap: wrap; }
+
+  #{$each-bp}items-start     { align-items: flex-start; }
+  #{$each-bp}items-end       { align-items: flex-end; }
+  #{$each-bp}items-center    { align-items: center; }
+  #{$each-bp}items-baseline  { align-items: baseline; }
+  #{$each-bp}items-stretch   { align-items: stretch; }
+
+  #{$each-bp}self-start      { align-self: flex-start; }
+  #{$each-bp}self-end        { align-self: flex-end; }
+  #{$each-bp}self-center     { align-self: center; }
+  #{$each-bp}self-baseline   { align-self: baseline; }
+  #{$each-bp}self-stretch    { align-self: stretch; }
+
+  #{$each-bp}justify-start   { justify-content: flex-start; }
+  #{$each-bp}justify-end     { justify-content: flex-end; }
+  #{$each-bp}justify-center  { justify-content: center; }
+  #{$each-bp}justify-between { justify-content: space-between; }
+  #{$each-bp}justify-around  { justify-content: space-around; }
+
+  #{$each-bp}content-start   { align-content: flex-start; }
+  #{$each-bp}content-end     { align-content: flex-end; }
+  #{$each-bp}content-center  { align-content: center; }
+  #{$each-bp}content-between { align-content: space-between; }
+  #{$each-bp}content-around  { align-content: space-around; }
+  #{$each-bp}content-stretch { align-content: stretch; }
+
+  #{$each-bp}order-0 { order: 0; }
+  #{$each-bp}order-1 { order: 1; }
+  #{$each-bp}order-2 { order: 2; }
+  #{$each-bp}order-3 { order: 3; }
+  #{$each-bp}order-4 { order: 4; }
+  #{$each-bp}order-5 { order: 5; }
+  #{$each-bp}order-6 { order: 6; }
+  #{$each-bp}order-7 { order: 7; }
+  #{$each-bp}order-8 { order: 8; }
+  #{$each-bp}order-last { order: 99999; }
+
+  #{$each-bp}mt-auto { margin-top: auto; }
+  #{$each-bp}mr-auto { margin-right: auto; }
+  #{$each-bp}mb-auto { margin-bottom: auto; }
+  #{$each-bp}ml-auto { margin-left: auto; }
+
+}
