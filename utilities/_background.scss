@@ -7,9 +7,8 @@
 .bg-stretch-x { background-size: 100% auto; }
 .bg-stretch-y { background-size: auto 100%; }
 
-.bg-position-n { background-position: top    center;}
-.bg-position-s { background-position: bottom center;}
-.bg-position-e { background-position: right  center;}
-.bg-position-w { background-position: left   center;}
-
-.bg-position-center { background-position: center;}
+.bg-center     { background-position: center; }
+.bg-position-n { background-position: top    center; }
+.bg-position-s { background-position: bottom center; }
+.bg-position-e { background-position: right  center; }
+.bg-position-w { background-position: left   center; }
