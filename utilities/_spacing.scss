@@ -13,12 +13,13 @@
               (h  (-left -right)),
               (v  (-top -bottom));
 
-  $variants:  (''       spacing()),
-              ('\\-'    spacing('-')),
-              ('\\-\\-' spacing('--')),
-              ('\\+'    spacing('+')),
-              ('\\+\\+' spacing('++')),
-              ('0'      0);
+  $variants:  (''          spacing()),
+              ('\\-'       spacing('-')),
+              ('\\-\\-'    spacing('--')),
+              ('\\-\\-\\-' spacing('---')),
+              ('\\+'       spacing('+')),
+              ('\\+\\+'    spacing('++')),
+              ('0'         0);
 
   // margin or padding?
   @each $prop-alias, $prop-name in $props {
