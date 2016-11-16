@@ -1,8 +1,66 @@
 @include each-bp {
   #{$each-bp}block        { display: block; }
   #{$each-bp}inline       { display: inline; }
-  #{$each-bp}inline-block { display: inline-block; }
+  #{$each-bp}inline-block { display: inline-block; }
+  #{$each-bp}hide         { display: none; }
+
+  #{$each-bp}absolute { position: absolute; }
+  #{$each-bp}relative { position: relative; }
+  #{$each-bp}static   { position: static; }
+
+  #{$each-bp}position-n  { top: 0; }
+  #{$each-bp}position-ne { top: 0; right: 0; }
+  #{$each-bp}position-e  { right: 0; }
+  #{$each-bp}position-se { bottom: 0; right: 0; }
+  #{$each-bp}position-s  { bottom: 0; }
+  #{$each-bp}position-sw { bottom: 0; left: 0; }
+  #{$each-bp}position-w  { left: 0; }
+  #{$each-bp}position-nw { top: 0; left: 0; }
+}
+
+.position-stretch {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto   { overflow: auto; }
+
+.opacity-10 { opacity: 0.1; }
+.opacity-20 { opacity: 0.2; }
+.opacity-30 { opacity: 0.3; }
+.opacity-40 { opacity: 0.4; }
+.opacity-50 { opacity: 0.5; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+.opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+
+.visuallyhidden {
+  @include visuallyhidden;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.reset-button {
+  @include input-reset();
+  padding: 0;
+  cursor: pointer;
+  line-height: normal;
 }
 
 .js .js-hide,
 .no-js .no-js-hide { display: none; }
+
+.is-active .hide-if-active         { display: none; }
+.is-active .block-if-active        { display: block; }
+.is-active .inline-if-active       { display: inline; }
+.is-active .inline-block-if-active { display: inline-block; }
