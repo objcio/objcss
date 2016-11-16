@@ -1,0 +1,35 @@
+.hover-color-black:hover,
+.hover-color-black:focus        { color: black; }
+.hover-color-blue:hover,
+.hover-color-blue:focus         { color: $c-blue; }
+.hover-color-blue-shade:hover,
+.hover-color-blue-shade:focus   { color: $c-blue-shade; }
+.hover-color-blue-dark:hover,
+.hover-color-blue-dark:focus    { color: $c-blue-dark; }
+.hover-color-blue-darker:hover,
+.hover-color-blue-darker:focus  { color: $c-blue-darker; }
+.hover-color-blue-darkest:hover,
+.hover-color-blue-darkest:focus { color: $c-blue-darkest; }
+.hover-color-orange:hover,
+.hover-color-orange:focus       { color: $c-orange; }
+
+.hover-bgcolor-black:hover,
+.hover-bgcolor-black:focus        { background-color: black; }
+.hover-bgcolor-blue:hover,
+.hover-bgcolor-blue:focus         { background-color: $c-blue; }
+.hover-bgcolor-blue-shade:hover,
+.hover-bgcolor-blue-shade:focus   { background-color: $c-blue-shade; }
+.hover-bgcolor-blue-dark:hover,
+.hover-bgcolor-blue-dark:focus    { background-color: $c-blue-dark; }
+.hover-bgcolor-blue-darker:hover,
+.hover-bgcolor-blue-darker:focus  { background-color: $c-blue-darker; }
+.hover-bgcolor-blue-darkest:hover,
+.hover-bgcolor-blue-darkest:focus { background-color: $c-blue-darkest; }
+.hover-bgcolor-orange:hover,
+.hover-bgcolor-orange:focus       { background-color: $c-orange; }
+
+
+.hover-underline:hover { text-decoration: underline; }
+
+.hover-cascade:hover .hover-cascade__color { color: inherit; }
+.hover-cascade:hover .hover-cascade__decoration { text-decoration: inherit; }
