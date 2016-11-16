@@ -28,6 +28,16 @@
   }
 }
 
+.c-button--blue {
+  border-color: $c-blue;
+  background: $c-blue;
+  &:hover,
+  &:focus {
+    border-color: $c-orange;
+    background: $c-orange;
+  }
+}
+
 .c-button--small {
   padding: modular(-1);
 }
