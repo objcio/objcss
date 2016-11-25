@@ -1,9 +1,17 @@
 .c-page-header {
+  padding-bottom: 6.5em;
+}
 
+.c-page-header--tight {
+  padding-bottom: 0;
 }
 
 .c-page-header--centered {
   text-align: center;
+}
+
+.c-page-header--pull {
+  margin-bottom: -6.5em;
 }
 
 .c-page-header__content {
@@ -12,7 +20,6 @@
 
 .c-page-header__title {
   @include fz-title;
-  margin-bottom: 2em;
   font-weight: bold;
   a {
     color: inherit;
@@ -24,8 +31,4 @@
     outline: none;
     color: $c-blue-darkest;
   }
-}
-
-.c-page-header--narrow .c-page-header__title {
-  margin-bottom: 1em;
 }
