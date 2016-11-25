@@ -8,9 +8,17 @@
 .ms4 { font-size: modular(4);}
 .ms5 { font-size: modular(5);}
 .ms6 { font-size: modular(6);}
+.ms7 { font-size: modular(7);}
+.ms8 { font-size: modular(8);}
 
 .ms-1 { font-size: modular(-1);}
 .ms-2 { font-size: modular(-2);}
+
+.fz-16    { font-size: em(16); }
+.fz-title { @include fz-title; }
+
+.type-sans { font-family: $type-sans; }
+.type-mono { font-family: $type-mono; }
 
 .bold   { font-weight: bold; }
 .italic { font-style: italic; }
@@ -24,7 +32,7 @@
 .text-right  { text-align: right; }
 
 .lh-100 { line-height: 1.00; }
-.lh-110 { line-height: 1.10; }
+.lh-110 { line-height: 1.10; }
 .lh-125 { line-height: 1.25; }
 .lh-140 { line-height: 1.40; }
 
