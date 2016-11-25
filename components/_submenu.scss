@@ -1,0 +1,27 @@
+.submenu {
+  border-radius: 5px;
+  border: solid 2px gray(85%);
+  border-radius: 4px;
+}
+
+.submenu__item {
+  text-decoration: none;
+  color: gray(60%);
+  display: block;
+  display: flex;
+  align-items: center;
+  padding: modular(-2);
+
+  &:hover {
+    color: black;
+  }
+
+  & + & {
+    border-top: solid 2px gray(85%);
+  }
+}
+
+.submenu__item.is-active {
+  color: $c-blue;
+  font-weight: bold;
+}
