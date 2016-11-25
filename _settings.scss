@@ -36,6 +36,7 @@ $spacings: (
   '-':   $gutter * .2,  // .5
   '--':  $gutter * .1,  // .25
   '---': $gutter * .06, // .15
+  '0':   0
 );
 
 @function spacing($modifier: '') {

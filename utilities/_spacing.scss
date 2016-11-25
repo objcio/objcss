@@ -1,51 +1,64 @@
-@mixin make-spacing {
+@mixin make-spacing($props: null, $sides: null, $variants: null, $negative: false) {
 
-  $namespace: '';
+  $props: m p !default;
+  $sides: a t r b l h v !default;
+  $variants: '' '-' '--' '---' '+' '++' '0' !default;
 
-  $props:     (m margin),
-              (p padding);
+  $props-map: (
+    m: margin,
+    p: padding
+  );
 
-  $sides:     (a  ''),
-              (t  -top),
-              (r  -right),
-              (b  -bottom),
-              (l  -left),
-              (h  (-left -right)),
-              (v  (-top -bottom));
+  $sides-map: (
+    a:  '',
+    t:  '-top',
+    r:  '-right',
+    b:  '-bottom',
+    l:  '-left',
+    h:  ('-left' '-right'),
+    v:  ('-top'  '-bottom')
+  );
 
-  $variants:  (''          spacing()),
-              ('\\-'       spacing('-')),
-              ('\\-\\-'    spacing('--')),
-              ('\\-\\-\\-' spacing('---')),
-              ('\\+'       spacing('+')),
-              ('\\+\\+'    spacing('++')),
-              ('0'         0);
+  // Negative selector prefix (n-) and value multiplier (-1)
+  $negative-prefix:     if($negative, 'n-', '');
+  $negative-multiplier: if($negative, -1, 1);
 
-  // margin or padding?
-  @each $prop-alias, $prop-name in $props {
+  // m or p
+  @each $prop in $props {
+    // 'margin' or 'padding'
+    $prop-name: map-get($props-map, $prop);
 
-    // top, left, right, ...?
-    @each $side-alias, $prop-suffixes in $sides {
+    // t, r, b, h, etc.
+    @each $side in $sides {
+      // -top, -right, -bottom, (-left, -right), etc.
+      $side-suffixes: map-get($sides-map, $side);
 
-      // base, -, +, 0, ...?
-      @each $variant-alias, $variant-value in $variants {
+      // '', '-', '+', '++'
+      @each $variant in $variants {
+        // 1em, 0.5em, 1.5em, 2.5em
+        $spacing-value: spacing($variant);
+        // escaped variant name: '', '-', '\\+', '\\+\\+'
+        // pluses have meaning as css selectors, so they need to be escaped
+        // needs double slash because slash is to be output to the final css
+        $variant-escaped: str-replace($variant, '+', '\\+');
 
-        // DECLARATION
-        .#{$namespace}#{$prop-alias}#{$side-alias}#{$variant-alias} {
+        // selector declaration
+        .#{$negative-prefix}#{$prop}#{$side}#{$variant-escaped} {
 
-          // for compound-rules
-          @each $prop-suffix in $prop-suffixes {
-            #{$prop-name}#{$prop-suffix}: $variant-value !important;
+          // in case there's more than one property in the $side (h or v)
+          @each $side-suffix in $side-suffixes {
+
+            // property declaration
+            #{$prop-name}#{$side-suffix}: $negative-multiplier * $spacing-value;
+
           }
-
-        } // declaration
-
-      } // $variants
-
-    } // $sides
-
-  } // $props
-
+        }
+      }
+    }
+  }
 }
 
+// Make complete positive spacing
 @include make-spacing;
+// Make negative spacing for side margins, in default, +, and ++ variants
+@include make-spacing($props: m, $sides: t r b l, $variants: '' '+' '++', $negative: true);

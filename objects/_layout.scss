@@ -99,11 +99,12 @@
     margin-bottom: spacing('+');
   }
 
-  #{$each-bp}stack     > * + * { margin-top: spacing(); }
-  #{$each-bp}stack\+   > * + * { margin-top: spacing('+'); }
-  #{$each-bp}stack\+\+ > * + * { margin-top: spacing('++'); }
-  #{$each-bp}stack\-   > * + * { margin-top: spacing('-'); }
-  #{$each-bp}stack\-\- > * + * { margin-top: spacing('--'); }
+  @each $spacing-variant, $spacing-value in $spacings {
+    $variant-escaped: str-replace($spacing-variant, '+', '\\+');
+    #{$each-bp}stack#{$variant-escaped} > * + * {
+      margin-top: $spacing-value;
+    }
+  }
 }
 
 .cells {
