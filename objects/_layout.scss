@@ -23,6 +23,8 @@
   @include bp-from(l)  { padding-right: spacing('++'); }
 }
 
+.box-sizing-content { box-sizing: content-box; }
+
 // padding all around
 .p-container {
   @extend .p-edges;
