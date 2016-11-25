@@ -18,11 +18,32 @@
   &.is-invalid {
     @include animate(shake);
   }
+}
 
+// Make Recurly hosted fields mimic normal fields
+.recurly-hosted-field {
+  border-bottom: solid 2px $c-blue;
+  border-top: solid 2px transparent;
+  padding: spacing('--') 0;
+  &-focus {
+    border-bottom-color: $c-orange;
+  }
 }
 
 .text-input--naked {
   border-bottom: none;
+}
+
+.input-label {
+  @include smallcaps;
+  color: gray(40%);
+}
+
+.input-label--required::after {
+  content: "*";
+  display: inline-block;
+  padding-left: .25em;
+  color: $c-orange;
 }
 
 .button-input {
@@ -43,4 +64,22 @@
     background: $c-orange;
     outline: none;
   }
+}
+
+.input-unit {
+  display: block;
+}
+
+.input-note {
+  display: block;
+  font-size: modular(-1);
+  color: gray(60%);
+  line-height: 1.25;
+}
+
+.input-unit.has-error {
+  color: $c-invalid;
+  .input-label { color: inherit; }
+  .text-input,
+  .recurly-hosted-field { border-bottom-color: $c-invalid; }
 }
