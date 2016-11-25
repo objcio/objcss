@@ -38,6 +38,12 @@
   }
 }
 
+.c-button[disabled] {
+  border-color: gray(75%);
+  background: gray(75%);
+  cursor: not-allowed;
+}
+
 .c-button--small {
   padding: modular(-1);
 }
