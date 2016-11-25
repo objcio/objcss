@@ -11,6 +11,11 @@
     min-height: 0; /* 1 */
   }
 
+  #{$each-bp}flex-1 { flex: 1; }
+  #{$each-bp}flex-2 { flex: 2; }
+  #{$each-bp}flex-3 { flex: 3; }
+  #{$each-bp}flex-4 { flex: 4; }
+
   #{$each-bp}flex-grow { flex: 1 0 auto; }
   #{$each-bp}flex-none { flex: none; }
 
