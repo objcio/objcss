@@ -10,7 +10,7 @@
 }
 
 .c-footer__promo {
-  
+
 }
 
 .c-footer__newsletter {
@@ -36,10 +36,6 @@
 
 .c-footer__newsletter__form__input {
   @include input-reset;
-  &::placeholder {
-    transition: color 100ms linear;
-    color: rgba(white, .25);
-  }
 
   font-size: modular(3);
 
@@ -61,6 +57,11 @@
   }
   &.is-invalid {
     @include animate(shake);
+  }
+
+  &::placeholder {
+    transition: color 100ms linear;
+    color: rgba(white, .25);
   }
 }
 
