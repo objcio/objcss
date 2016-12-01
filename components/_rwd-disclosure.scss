@@ -1,0 +1,45 @@
+// Responsive Disclosure
+// A pattern to show certain content at larger breakpoints, but
+//   hide it (with a toggle to show/hide it) in smaller breakpoints.
+// The JS behavior needs to set an .is-active class in the container
+//   when a descedant button is clicked. This can be done with the
+//   custom-written js-activatable module.
+
+// By default, toggle is hidden, content is shown
+.rwd-disclosure__toggle  { display: none; }
+.rwd-disclosure__content { display: block; }
+
+// Then, show toggle and hide content below the chosen breakpoint.
+// This module ALWAYS USED WITH a breakpoint prefix, e.g. m-|rwd-disclosure.
+@include each-bp($unprefixed: false, $min-width: false, $max-width: true) {
+
+  // Contrary to usual BEM best practices, here descendant styles need to be
+  // nested inside the container, so they respect the breakpoint rules
+  // without requiring a breakpoint prefix themselves. That is, this way
+  // we only need to use e.g. 'm-' on the container, and not on the children.
+  #{$each-bp}rwd-disclosure {
+
+    // [1] Style the disclosure element
+    & {
+      border: solid 2px gray(85%);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .rwd-disclosure__content {
+      border-top: solid 2px gray(85%);
+      padding: spacing();
+    }
+
+    // [2] Show the toggle button, and hide the content
+    .rwd-disclosure__toggle  { display: block; }
+    .rwd-disclosure__content { display: none; }
+
+
+    // [3] If container is active, show the content too.
+    // Yes, we could also change the previous declaration to be
+    // &:not(.is-active) .rwd-disclosure__content, but this way
+    // we support more browswers w/o much additional effort.
+    &.is-active .rwd-disclosure__content { display: block; }
+  }
+}
