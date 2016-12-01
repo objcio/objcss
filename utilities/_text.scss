@@ -14,7 +14,7 @@
 .ms-1 { font-size: modular(-1);}
 .ms-2 { font-size: modular(-2);}
 
-.fz-16    { font-size: em(16); }
+.fz-16    { font-size: 16px; }
 .fz-title { @include fz-title; }
 
 .type-sans { font-family: $type-sans; }

@@ -31,5 +31,8 @@
 
 .hover-underline:hover { text-decoration: underline; }
 
-.hover-cascade:hover .hover-cascade__color { color: inherit; }
+.hover-cascade:hover .hover-cascade__color      { color: inherit; }
 .hover-cascade:hover .hover-cascade__decoration { text-decoration: inherit; }
+.hover-cascade:hover .hover-cascade__hide       { display: none; }
+.hover-cascade:hover .hover-cascade__block      { display: block; }
+.hover-cascade:hover .hover-cascade__inline     { display: inline; }
