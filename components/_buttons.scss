@@ -44,6 +44,16 @@
   cursor: not-allowed;
 }
 
+.c-button--gray {
+  border-color: gray(60%);
+  background: gray(60%);
+  &:hover,
+  &:focus {
+    border-color: gray(30%);
+    background: gray(30%);
+  }
+}
+
 .c-button--small {
   padding: modular(-1);
 }
@@ -96,6 +106,16 @@
     border-color: white;
     background: white;
     color: gray(15%);
+  }
+}
+
+.c-button--ghost.c-button--blue {
+  border-color: $c-blue;
+  color: $c-blue;
+  &:hover, &:focus {
+    background: transparent;
+    border-color: $c-orange;
+    color: $c-orange;
   }
 }
 
