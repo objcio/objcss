@@ -61,6 +61,9 @@
 .no-js .no-js-hide { display: none; }
 
 .is-active .hide-if-active         { display: none; }
+.is-active .show-if-active,
 .is-active .block-if-active        { display: block; }
 .is-active .inline-if-active       { display: inline; }
 .is-active .inline-block-if-active { display: inline-block; }
+
+.hide-if-empty:empty { display: none; }
