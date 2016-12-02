@@ -2,19 +2,21 @@
 .valign-middle { vertical-align: middle; }
 .valign-bottom { vertical-align: bottom; }
 
-.float-left  { float: left; }
-.float-right { float: right; }
-.float-none  { float: none; }
-
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.clear-left  { clear: left; }
-.clear-right { clear: right; }
-.clear-both  { clear: both; }
-.clear-none  { clear: none; }
-
 .ml-auto { margin-left: auto;  }
 .mr-auto { margin-right: auto; }
+
+@include each-bp($max-width: false ) {
+  #{$each-bp}float-left  { float: left; }
+  #{$each-bp}float-right { float: right; }
+  #{$each-bp}float-none  { float: none; }
+
+  #{$each-bp}clear-left  { clear: left; }
+  #{$each-bp}clear-right { clear: right; }
+  #{$each-bp}clear-both  { clear: both; }
+  #{$each-bp}clear-none  { clear: none; }
+}
