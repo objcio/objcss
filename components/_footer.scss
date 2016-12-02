@@ -1,16 +1,10 @@
 .c-footer {
-  background: $c-blue;
-  color: $c-blue-darker;
 }
 
 .c-footer__heading {
   @include smallcaps;
   color: $c-orange;
   margin-bottom: modular(4);
-}
-
-.c-footer__promo {
-
 }
 
 .c-footer__newsletter {
@@ -145,60 +139,4 @@
 
 .c-footer__issues__cta {
   @extend .c-footer__book__cta;
-}
-
-
-.c-footer__baseboard {
-  background: $c-blue-darkest;
-  color: $c-blue;
-}
-
-.c-footer__baseboard__links {
-  font-size: modular(-1);
-}
-
-.c-footer__baseboard__links {
-  button {
-    appearance: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-    border: none;
-    display: inline;
-    vertical-align: baseline;
-    border-radius: 0;
-    cursor: pointer;
-  }
-  a, button {
-    color: inherit;
-    text-decoration: none;
-    padding: .25em 0;
-    display: inline-block;
-    &:hover, &:focus {
-      color: $c-orange;
-      outline: none;
-    }
-  }
-}
-
-.c-footer__baseboard__about__logo {
-  padding-top: .25em;
-  padding-bottom: .25em;
-}
-.c-footer__baseboard__about__logo svg {
-  height: 2em;
-  #letters { fill: $c-blue; }
-  #arrows  { fill: $c-orange; }
-}
-.c-footer__baseboard__about__text {
-  margin-top: 1em;
-  line-height: 1.25;
-  a {
-    color: $c-orange;
-    text-decoration: none;
-    &:hover,&:focus {
-      border-bottom: solid 1px;
-      outline: none;
-    }
-  }
 }
