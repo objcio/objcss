@@ -6,13 +6,13 @@ $header-logo-height: 1.85em;
   position: absolute;
   z-index: 1000;
   left: 0; right: 0; top: 0;
-  // border-top:    solid 1px white;
-  // border-bottom: solid 1px white;
+  border-top:    solid 1px white;
+  border-bottom: solid 1px white;
 
   &.headroom {
     position: fixed;
     transition: transform 200ms ease-out, border-bottom-color 200ms ease-out;
-    // &--not-top  { border-bottom-color: gray(90%); }
+    &--not-top  { border-bottom-color: gray(85%); }
     &--pinned   { transform: translateY(0%); }
     &--unpinned { transform: translateY(-100%); }
   }
@@ -27,9 +27,3 @@ $header-logo-height: 1.85em;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-
-// @include bp-upto(l) {
-//   .site-header       { padding-left: 0; padding-right: 0; }
-//   .site-header__row  { padding-left: spacing(); padding-right: spacing(); }
-//   .site-header__nav--primary .site-header__nav__list__item { margin-right: 1.5em; }
-// }
