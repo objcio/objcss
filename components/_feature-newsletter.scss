@@ -1,52 +1,17 @@
-.c-feature-newsletter {
-
-}
-
-.c-feature-newsletter__img {
-  padding-right: 1.5em;
-}
-
-.c-feature-newsletter__img svg {
-  width: 3em;
-  height: auto;
-  path          { transition: all 100ms ease-out; }
-  #letter       { stroke: $c-orange; transform: translateY(0); }
-  #front-border { fill:   darken($c-orange, 12%); }
-  #back-border  { fill:   darken($c-orange, 12%); }
-}
-
-.c-feature-newsletter__img:hover svg {
-  #letter       { stroke: lighten($c-blue, 18%); transform: translateY(-.1em); }
-  #front-border { fill:   $c-blue; }
-  #back-border  { fill:   $c-blue; }
-}
-
-.c-feature-newsletter__header {
-  @include smallcaps;
-  color: $c-blue;
-  margin-bottom: 1em;
-  line-height: 1.1;
-}
-
-.c-feature-newsletter__prompt {
-  color: gray(30%);
-  margin-bottom: 1em;
-}
-
-.c-feature-newsletter__form {
+.feature-newsletter {
   position: relative;
   max-width: 20em;
 }
 
-.c-feature-newsletter__form__input,
-.c-feature-newsletter__form__button {
+.feature-newsletter__input,
+.feature-newsletter__button {
   @include input-reset;
   font-size: modular(2);
   padding: .25em 0;
   vertical-align: middle;
 }
 
-.c-feature-newsletter__form__input {
+.feature-newsletter__input {
   appearance: none;
   display: block;
   width: 100%;
@@ -68,7 +33,7 @@
   }
 }
 
-.c-feature-newsletter__form__button {
+.feature-newsletter__button {
   position: absolute;
   bottom: 0; right: 0;
   cursor: pointer;

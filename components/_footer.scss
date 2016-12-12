@@ -124,19 +124,3 @@
   color: $c-orange;
   font-weight: bold;
 }
-
-.c-footer__issues {
-
-}
-
-.c-footer__issues__title {
-  @extend .c-footer__book__title;
-}
-
-.c-footer__issues__synopsis {
-  @extend .c-footer__book__synopsis;
-}
-
-.c-footer__issues__cta {
-  @extend .c-footer__book__cta;
-}
