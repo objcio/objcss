@@ -14,13 +14,24 @@
 .radius-9    { border-radius: 9px; }
 .radius-10   { border-radius: 10px; }
 
-.border-top    { border-top-style: solid; }
-.border-right  { border-right-style: solid; }
-.border-bottom { border-bottom-style: solid; }
-.border-left   { border-left-style: solid; }
+.no-radius-top-left     { border-top-left-radius: 0; }
+.no-radius-top-right    { border-top-right-radius: 0; }
+.no-radius-bottom-left  { border-bottom-left-radius: 0; }
+.no-radius-bottom-right { border-bottom-right-radius: 0; }
+
+.border-top       { border-top-style:    solid; }
+.border-right     { border-right-style:  solid; }
+.border-bottom    { border-bottom-style: solid; }
+.border-left      { border-left-style:   solid; }
+
+.no-border-top    { border-top-style:    none; }
+.no-border-right  { border-right-style:  none; }
+.no-border-bottom { border-bottom-style: none; }
+.no-border-left   { border-left-style:   none; }
 
 .radius-full { border-radius: 999px; }
 
+.border-color-transparent   { border-color: transparent; }
 .border-color-current       { border-color: currentColor; }
 .border-color-inherit       { border-color: inherit; }
 

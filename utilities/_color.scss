@@ -72,6 +72,8 @@
 .bgcolor-gray-85       { background-color: gray(85%); }
 .bgcolor-gray-90       { background-color: gray(90%); }
 .bgcolor-gray-95       { background-color: gray(95%); }
+.bgcolor-gray-97       { background-color: gray(97%); }
+
 
 .bggradient {
   @mixin bg-gradient($start, $stop) {

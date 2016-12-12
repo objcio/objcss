@@ -1,3 +1,5 @@
+.height-auto { height: auto; }
+
 .width-1    { width: 1em; }
 .width-2    { width: 2em; }
 .width-3    { width: 4em; }
@@ -22,7 +24,16 @@
   #{$each-bp}width-full { width: 100%; }
 }
 
-
+.min-width-1    { min-width: 1em; }
+.min-width-2    { min-width: 2em; }
+.min-width-3    { min-width: 4em; }
+.min-width-4    { min-width: 8em; }
+.min-width-5    { min-width: 16em; }
+.min-width-6    { min-width: 24em; }
+.min-width-7    { min-width: 32em; }
+.min-width-8    { min-width: 40em; }
+.min-width-9    { min-width: 48em; }
+.min-width-10   { min-width: 64em; }
 
 .max-width-1    { max-width: 1em; }
 .max-width-2    { max-width: 2em; }

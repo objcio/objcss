@@ -2,11 +2,8 @@
 .valign-middle { vertical-align: middle; }
 .valign-bottom { vertical-align: bottom; }
 
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
+.mt-auto { margin-top: auto;  }
+.mb-auto { margin-bottom: auto;  }
 .ml-auto { margin-left: auto;  }
 .mr-auto { margin-right: auto; }
 
@@ -15,6 +12,12 @@
   #{$each-bp}text-left   { text-align: left; }
   #{$each-bp}text-center { text-align: center; }
   #{$each-bp}text-right  { text-align: right; }
+
+  #{$each-bp}center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   #{$each-bp}float-left  { float: left; }
   #{$each-bp}float-right { float: right; }
   #{$each-bp}float-none  { float: none; }
