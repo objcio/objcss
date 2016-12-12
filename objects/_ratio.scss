@@ -1,10 +1,11 @@
 .ratio {
+  // Ratios need parenthesis otherwise libsass doesn't see them as numbers
   $ratios: (
-    '16\\/10': 16/10,
-    '16\\/9':  16/9,
+    '16\\/10': (16/10),
+    '16\\/9':  (16/9),
     '1\\/1':   1,
-    'cover':   250/381,
-    'cover-cropped': 250/280
+    'cover':   (250/381),
+    'cover-cropped': (250/280)
   );
   display: block;
   position: relative;
@@ -13,7 +14,7 @@
 
   @each $name, $ratio in $ratios {
     &--#{$name} {
-      padding-bottom: percentage(1/$ratio);
+      padding-bottom: percentage(1 / $ratio);
     }
   }
 }
