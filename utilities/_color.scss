@@ -72,3 +72,20 @@
 .bgcolor-gray-85       { background-color: gray(85%); }
 .bgcolor-gray-90       { background-color: gray(90%); }
 .bgcolor-gray-95       { background-color: gray(95%); }
+
+.bggradient {
+  @mixin bg-gradient($start, $stop) {
+    background-color: $stop;
+    background-image: linear-gradient($start, $stop);
+  }
+
+  &-swifttalk {
+    @include bg-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
+  }
+
+  @each $book-slug, $book-gradient in $c-book {
+    &-#{$book-slug} {
+      @include bg-gradient(map-get($book-gradient, start), map-get($book-gradient, stop));
+    }
+  }
+}
