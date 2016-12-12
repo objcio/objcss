@@ -20,8 +20,9 @@
 .type-sans { font-family: $type-sans; }
 .type-mono { font-family: $type-mono; }
 
-.bold   { font-weight: bold; }
-.italic { font-style: italic; }
+.regular { font-weight: normal; }
+.bold    { font-weight: bold; }
+.italic  { font-style: italic; }
 
 .no-decoration { text-decoration: none; }
 .underline     { text-decoration: underline; }
