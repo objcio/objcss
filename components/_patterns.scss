@@ -1,4 +1,6 @@
 $arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
+$arrow-pattern-white: arrow-pattern($arrows: #FFFFFF);
+$arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
 
 // Base arrow pattern
 %bg-pattern {
@@ -20,12 +22,33 @@ $arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
   background-color: $c-blue-shade;
   background-image: arrow-pattern($arrows: $c-blue);
 }
+.bg-pattern-orange {
+  @extend %bg-pattern;
+  background-color: $c-orange;
+  background-image: arrow-pattern($arrows: $c-orange-dark);
+}
+.bg-pattern-orange-reverse {
+  @extend %bg-pattern;
+  background-color: $c-orange-dark;
+  background-image: arrow-pattern($arrows: $c-orange);
+}
 
 
-// 2. Translucent black arrows, used to build patterns over another background
+// 2. Arrows used to build patterns over another background
+// 2.1. Black translucent arrows
 .bg-pattern-shade {
   @extend %bg-pattern;
   background-image: $arrow-pattern-shade;
+}
+// 2.2. White translucent
+.bg-pattern-light {
+  @extend %bg-pattern;
+  background-image: $arrow-pattern-light;
+}
+// 2.3. White arrows
+.bg-pattern-white {
+  @extend %bg-pattern;
+  background-image: $arrow-pattern-white;
 }
 
 
@@ -44,6 +67,11 @@ $arrow-pattern-shade: arrow-pattern($arrows: #000000, $opacity: 0.065);
   // 3.1 For Swift Talk
   &--swifttalk {
     @include bg-pattern-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
+  }
+
+  &--gray-white {
+    background-color: white;
+    background-image: $arrow-pattern-white, linear-gradient(gray(95%), white 20em, white);
   }
 
   // 3.2. For each book
