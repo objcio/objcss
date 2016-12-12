@@ -11,6 +11,10 @@
 .mr-auto { margin-right: auto; }
 
 @include each-bp($max-width: false ) {
+
+  #{$each-bp}text-left   { text-align: left; }
+  #{$each-bp}text-center { text-align: center; }
+  #{$each-bp}text-right  { text-align: right; }
   #{$each-bp}float-left  { float: left; }
   #{$each-bp}float-right { float: right; }
   #{$each-bp}float-none  { float: none; }
