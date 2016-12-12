@@ -1,15 +1,19 @@
 .ratio {
-  $ratios: (16 10, 16 9, 1 1);
+  $ratios: (
+    '16\\/10': 16/10,
+    '16\\/9':  16/9,
+    '1\\/1':   1,
+    'cover':   250/381,
+    'cover-cropped': 250/280
+  );
   display: block;
   position: relative;
   height: 0;
   padding-bottom: 0%;
 
-  @each $ratio in $ratios {
-    $w: nth($ratio, 1);
-    $h: nth($ratio, 2);
-    &--#{$w}\/#{$h} {
-      padding-bottom: percentage(nth($ratio,2) / nth($ratio, 1));
+  @each $name, $ratio in $ratios {
+    &--#{$name} {
+      padding-bottom: percentage(1/$ratio);
     }
   }
 }
@@ -20,4 +24,5 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
