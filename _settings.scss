@@ -45,16 +45,16 @@ $spacings: (
 
 $c-book: (
   functional-swift: (
-    start:  #F2B23B,
-    stop:   #D72E3C
+    start: HSL(38, 88%, 59%),
+    stop: HSL(355, 68%, 51%)
   ),
   core-data: (
-    start: #009ace,
-    stop:  #293576
+    start: HSL(199, 95%, 45%),
+    stop:  HSL(210, 70%, 40%)
   ),
   advanced-swift: (
-    start: #F23F3F,
-    stop:  #FF4AA4
+    start: HSL(324, 95%, 45%),
+    stop:  HSL(292, 62%, 35%)
   )
 );
 
