@@ -28,6 +28,10 @@
   &-focus {
     border-bottom-color: $c-orange;
   }
+
+  // Recurly's iframes are 100% tall
+  height: 1.2em;
+  box-sizing: content-box;
 }
 
 .text-input--naked {
