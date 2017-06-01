@@ -26,10 +26,14 @@
   #{$each-bp}width-2\/5  { width: percentage(2/5); }  // 40%
   #{$each-bp}width-3\/5  { width: percentage(3/5); }  // 60%
 
+  #{$each-bp}width-3\/8  { width: percentage(3/8); }  // 37.5%
+  #{$each-bp}width-5\/8  { width: percentage(5/8); }  // 62.5%
+
   #{$each-bp}width-3\/10 { width: percentage(3/10); } // 30%
   #{$each-bp}width-7\/10 { width: percentage(7/10); } // 70%
 
   #{$each-bp}width-5\/12 { width: percentage(5/12); }
+  #{$each-bp}width-7\/12 { width: percentage(7/12); }
 
   #{$each-bp}width-full { width: 100%; }
 
