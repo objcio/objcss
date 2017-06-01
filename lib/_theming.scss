@@ -14,6 +14,10 @@ $themes: (
   advanced-swift: (
     base: map-get(map-get($c-book, advanced-swift), stop),
     accent: map-get(map-get($c-book, advanced-swift), start)
+  ),
+  optimizing-collections: (
+    base: map-get(map-get($c-book, optimizing-collections), stop),
+    accent: map-get(map-get($c-book, optimizing-collections), start)
   )
 );
 
