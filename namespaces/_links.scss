@@ -1,0 +1,9 @@
+.links {
+  a {
+    text-decoration: none;
+    color: $c-blue;
+    @include theme-styling { color: $_base; }
+    &:hover, &:focus { border-bottom: solid 1px; }
+    &:focus { outline: none; }
+  }
+}

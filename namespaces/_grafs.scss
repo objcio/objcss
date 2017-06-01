@@ -1,0 +1,13 @@
+.grafs {
+  line-height: 1.4;
+  color: gray(40%);
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+}
