@@ -1,9 +1,17 @@
 .c-book-button {
   display: inline-block;
-  border: solid 2px $c-blue;
   border-radius: 5px;
+
+  border: solid 2px $c-blue;
   background: $c-blue;
   color: $c-blue;
+
+  @include theme-styling {
+    border-color: $_base;
+    background:   $_base;
+    color:        $_base;
+  }
+
   overflow: hidden;
   text-decoration: none;
   &--small {
@@ -15,8 +23,7 @@
   }
 }
 
-.c-book-button:hover,
-.c-book-button:focus {
+.c-book-button:hover {
   outline: none;
 }
 
@@ -64,9 +71,13 @@
 
 .c-book-button__price {
   background: $c-blue;
-  color: white;
   border-left: solid 2px $c-blue;
+  color: white;
   width: 3em;
+  @include theme-styling {
+    background: $_base;
+    border-left-color: $_base;
+  }
 }
 
 .c-book-button__price__number {
@@ -79,14 +90,26 @@
   opacity: .6;
 }
 
-.c-book-button:hover, .c-book-button:focus {
+.c-book-button:hover {
+  color:        $c-orange;
   border-color: $c-orange;
-  color: $c-orange;
-  background: $c-orange;
+  background:   $c-orange;
+
   .c-book-button__price {
-    background: $c-orange;
+    background:   $c-orange;
     border-color: $c-orange;
     color: white;
+  }
+
+  @include theme-styling {
+    color:        $_accent;
+    border-color: $_accent;
+    background:   $_accent;
+    .c-book-button__price {
+      background:   $_accent;
+      border-color: $_accent;
+      color: white;
+    }
   }
 }
 
@@ -106,8 +129,7 @@
     color: $c-blue;
     border-color: white;
   }
-  &:hover,
-  &:focus {
+  &:hover {
     background: white;
     border-color: white;
     color: $c-blue;
@@ -123,8 +145,7 @@
   .c-book-button--#{$book} {
     .c-book-button__price { color: map-get($gradient, stop); }
   }
-  .c-book-button--#{$book}:hover,
-  .c-book-button--#{$book}:focus {
+  .c-book-button--#{$book}:hover {
     color: map-get($gradient, stop);
   }
 }
