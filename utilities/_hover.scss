@@ -28,6 +28,19 @@
 .hover-bgcolor-orange:hover,
 .hover-bgcolor-orange:focus       { background-color: $c-orange; }
 
+@each $theme, $_ in $themes {
+  .t-#{$theme} {
+    .hover-color-theme-base:hover,
+    .hover-color-theme-base:focus      { color: theme-color($theme, base); }
+    .hover-color-theme-accent:hover,
+    .hover-color-theme-accent:focus    { color: theme-color($theme, accent); }
+
+    .hover-bgcolor-theme-base:hover,
+    .hover-bgcolor-theme-base:focus   { background-color: theme-color($theme, base); }
+    .hover-bgcolor-theme-accent:hover,
+    .hover-bgcolor-theme-accent:focus { background-color: theme-color($theme, accent); }
+  }
+}
 
 .hover-underline:hover { text-decoration: underline; }
 .hover-border-bottom:hover { border-bottom: solid 1px; }

@@ -6,9 +6,22 @@ $logo-width-height-ratio: 528 / 158;
   transition: fill 150ms ease-in-out;
 }
 
-a.logo:hover,
-a .logo:hover {
-  [fill] {
-    fill: orange;
+.logo #letters {
+  fill: $c-blue;
+}
+.logo #arrows,
+a.logo:hover #letters,
+a .logo:hover #letters {
+  fill: $c-orange;
+}
+
+@include theme-styling {
+  .logo--themed #letters {
+    fill: $_base;
+  }
+  .logo--themed #arrows,
+  a.logo--themed:hover #letters,
+  a .logo--themed:hover #letters {
+    fill: $_accent;
   }
 }

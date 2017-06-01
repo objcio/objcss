@@ -91,3 +91,12 @@
     }
   }
 }
+
+@each $theme, $_ in $themes {
+  .t-#{$theme} {
+    .color-theme-base      { color: theme-color($theme, base); }
+    .color-theme-accent    { color: theme-color($theme, accent); }
+    .bgcolor-theme-base   { background-color: theme-color($theme, base); }
+    .bgcolor-theme-accent { background-color: theme-color($theme, accent); }
+  }
+}
