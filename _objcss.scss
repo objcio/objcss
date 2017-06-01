@@ -25,7 +25,6 @@
 @import 'components/issue';
 @import 'components/post-issue';
 @import 'components/article';
-@import 'components/text';
 @import 'components/post-article';
 @import 'components/contributors';
 @import 'components/search';
@@ -52,6 +51,8 @@
 @import 'components/submenu';
 @import 'components/rwd-disclosure';
 
+// Namespaces styled with element selectors
+@import 'namespaces/text';
 // Utility classes
 @import 'utilities/display';
 @import 'utilities/sizing';

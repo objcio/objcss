@@ -1,7 +1,5 @@
 .c-text {
-  color: gray(15%);
-  ::selection     { background: lighten($c-orange, 5%); }
-  ::moz-selection { background: lighten($c-orange, 5%); }
+  color: gray(25%);
 
   &:not(.c-text--padded) > *:first-child {
     margin-top: 0;
@@ -9,7 +7,10 @@
   }
 
   a {
-    color: #08c;
+    color: $c-blue;
+    @include theme-styling {
+      color: $_base;
+    }
     text-decoration: none;
     &:hover, &:focus {
       border-bottom: solid 1px;
@@ -100,6 +101,9 @@
     &:before {
       content:"\2042";
       color: $c-blue;
+      @include theme-styling {
+        color: $_base;
+      }
     }
   }
 
@@ -107,6 +111,9 @@
     max-width: $text-width;
     color: gray(35%);
     border-left: solid 2px $c-blue;
+    @include theme-styling {
+      border-left-color: $_base;
+    }
     padding-left: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
