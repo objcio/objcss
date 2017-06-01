@@ -1,18 +1,22 @@
 .smallcaps       { @include smallcaps(0.75); }
 .smallcaps-large { @include smallcaps; }
 
-.ms0 { font-size: modular(0);}
-.ms1 { font-size: modular(1);}
-.ms2 { font-size: modular(2);}
-.ms3 { font-size: modular(3);}
-.ms4 { font-size: modular(4);}
-.ms5 { font-size: modular(5);}
-.ms6 { font-size: modular(6);}
-.ms7 { font-size: modular(7);}
-.ms8 { font-size: modular(8);}
+@include each-bp() {
 
-.ms-1 { font-size: modular(-1);}
-.ms-2 { font-size: modular(-2);}
+  #{$each-bp}ms0 { font-size: modular(0);}
+  #{$each-bp}ms1 { font-size: modular(1);}
+  #{$each-bp}ms2 { font-size: modular(2);}
+  #{$each-bp}ms3 { font-size: modular(3);}
+  #{$each-bp}ms4 { font-size: modular(4);}
+  #{$each-bp}ms5 { font-size: modular(5);}
+  #{$each-bp}ms6 { font-size: modular(6);}
+  #{$each-bp}ms7 { font-size: modular(7);}
+  #{$each-bp}ms8 { font-size: modular(8);}
+
+  #{$each-bp}ms-1 { font-size: modular(-1);}
+  #{$each-bp}ms-2 { font-size: modular(-2);}
+
+}
 
 .fz-16    { font-size: 16px; }
 .fz-nav   { font-size: em(19, $em-base); }
