@@ -1,3 +1,19 @@
+.target-animate-flash:target {
+  animation-name: flash;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+.transition-color {
+  transition-property: color;
+}
+
 .filter-grayscale { filter: grayscale(100%); }
 .filter-blur-5   { filter: blur(5px); }
 
