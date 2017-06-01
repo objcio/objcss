@@ -15,6 +15,7 @@
 .ms-2 { font-size: modular(-2);}
 
 .fz-16    { font-size: 16px; }
+.fz-nav   { font-size: em(19, $em-base); }
 .fz-title { @include fz-title; }
 
 .type-sans { font-family: $type-sans; }

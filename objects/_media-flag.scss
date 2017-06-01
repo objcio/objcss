@@ -2,7 +2,7 @@
   #{$each-bp}media                       { overflow: hidden; }
   #{$each-bp}media__image                { float: left; }
   #{$each-bp}media__body                 { overflow: hidden; }
-  #{$each-bp}media--right  .media__image { float: right; }
+  #{$each-bp}media--right  #{$each-bp}media__image { float: right; }
   #{$each-bp}media__image--gutter        { margin-right: $gutter;   }
   #{$each-bp}media__image--mr            { margin-right: spacing(); }
 }
