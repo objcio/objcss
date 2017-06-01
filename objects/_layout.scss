@@ -117,7 +117,3 @@
   @extend .stretch-h;
   @extend .stretch-v;
 }
-
-@include each-bp {
-  #{$each-bp}width-sidebar { width: 17em; }
-}
