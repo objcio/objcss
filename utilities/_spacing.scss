@@ -2,7 +2,7 @@
 
   $props: m p !default;
   $sides: a t r b l h v !default;
-  $variants: '' '-' '--' '---' '+' '++' '0' !default;
+  $variants: '' '-' '--' '---' '+' '++' '+++' '0' !default;
 
   $props-map: (
     m: margin,
