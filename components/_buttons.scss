@@ -159,3 +159,22 @@
   color: $c-orange;
   @include theme-styling { color: $_accent; }
 }
+
+
+.button-arrow {
+  display: flex !important;
+  flex-flow: row nowrap;
+  align-items: baseline;
+
+  &::after {
+    content: '→';
+    padding-left: spacing();
+    font-weight: bold;
+    font-size: modular(1);
+    margin-left: auto;
+  }
+
+  &.bordered-button::after {
+    @include theme-styling { color: $_accent; }
+  }
+}
