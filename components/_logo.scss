@@ -1,8 +1,9 @@
 $logo-width-height-ratio: 528 / 158;
 
 .logo {
-  height: 1.85em;
-  width: 1.85em * $logo-width-height-ratio;
+  height: 1.7em;
+  width: 1.7em * $logo-width-height-ratio;
+  transition: fill 150ms ease-in-out;
 }
 
 a.logo:hover,
