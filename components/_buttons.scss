@@ -143,8 +143,6 @@
   border: solid 2px;
   border-radius: 5px;
 
-  transition: color 150ms ease-in;
-
   // blue with orange hover
   color: $c-blue;
   &:hover, &:focus { color: $c-orange; }
