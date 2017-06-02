@@ -73,12 +73,22 @@
 }
 
 @include each-bp() {
-  #{$each-bp}float-l {
+  #{$each-bp}left-floater {
+    float: left;
+    margin-right:  spacing();
+    margin-bottom: spacing();
+  }
+  #{$each-bp}left-floater\+ {
     float: left;
     margin-right:  spacing('+');
     margin-bottom: spacing('+');
   }
-  #{$each-bp}float-r {
+  #{$each-bp}right-floater {
+    float: right;
+    margin-left:   spacing();
+    margin-bottom: spacing();
+  }
+  #{$each-bp}right-floater\+ {
     float: right;
     margin-left:   spacing('+');
     margin-bottom: spacing('+');
