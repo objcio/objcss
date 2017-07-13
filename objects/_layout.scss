@@ -6,21 +6,9 @@
 
 // padding left and right, responsive
 .p-edges {
-                         padding-left: spacing();     padding-right: spacing();
+                         padding-left: spacing();  padding-right: spacing();
   @include bp-from(xs) { padding-left: spacing('+');  padding-right: spacing('+'); }
   @include bp-from(l)  { padding-left: spacing('++'); padding-right: spacing('++'); }
-}
-
-.p-edge-l {
-                         padding-left: spacing();
-  @include bp-from(xs) { padding-left: spacing('+'); }
-  @include bp-from(l)  { padding-left: spacing('++'); }
-}
-
-.p-edge-r {
-                         padding-right: spacing();
-  @include bp-from(xs) { padding-right: spacing('+'); }
-  @include bp-from(l)  { padding-right: spacing('++'); }
 }
 
 .box-sizing-content { box-sizing: content-box; }

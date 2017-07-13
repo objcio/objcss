@@ -1,78 +1,20 @@
 // Setup code
-@import 'lib/functions';
-@import 'settings';
-@import 'lib/mixins';
-@import 'lib/breakpoints';
-@import 'lib/theming';
-@import 'lib/reset';
+@import 'lib';
 
 // Global styles
 @import 'global';
 
 // Primary building blocks
-@import 'objects/layout';
-@import 'objects/media-flag';
-@import 'objects/modal';
-@import 'objects/ratio';
-
-// Ready-made components, with a specific HTML structure
-@import 'components/buttons';
-@import 'components/arrow';
-@import 'components/header';
-@import 'components/footer';
-@import 'components/page-header';
-@import 'components/sorting';
-@import 'components/issue-unit';
-@import 'components/issue';
-@import 'components/post-issue';
-@import 'components/article';
-@import 'components/post-article';
-@import 'components/contributors';
-@import 'components/search';
-@import 'components/feature-newsletter';
-@import 'components/feature-books';
-@import 'components/blog';
-@import 'components/newsletter-modal';
-@import 'components/book';
-@import 'components/buy';
-@import 'components/sample';
-@import 'components/book-box';
-@import 'components/book-button';
-@import 'components/preview-header';
-@import 'components/store-modal';
-@import 'components/toc';
-@import 'components/preview-banner';
-@import 'components/swifttalk-box';
-@import 'components/patterns';
-@import 'components/tabs';
-@import 'components/tags';
-@import 'components/label';
-@import 'components/logo';
-@import 'components/inputs';
-@import 'components/submenu';
-@import 'components/rwd-disclosure';
+@import 'objects';
 
 // Namespaces styled with element selectors
-@import 'namespaces/text';
-@import 'namespaces/grafs';
-@import 'namespaces/links';
+@import 'namespaces';
+
+// Ready-made components, with a specific HTML structure
+@import 'components';
 
 // Utility classes
-@import 'utilities/display';
-@import 'utilities/sizing';
-@import 'utilities/spacing';
-@import 'utilities/text';
-@import 'utilities/color';
-@import 'utilities/alignment';
-@import 'utilities/background';
-@import 'utilities/borders';
-@import 'utilities/svg';
-@import 'utilities/effects';
-@import 'utilities/hover';
-@import 'utilities/flex';
-@import 'utilities/icons';
-@import 'utilities/table';
+@import 'utilities';
 
 // 3rd-party code
-@import 'vendor/highlight-xcode';
-@import 'vendor/animate';
+@import 'vendor';

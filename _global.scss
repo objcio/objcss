@@ -35,6 +35,11 @@ body {
   > main { flex: 1; }
 }
 
+hr {
+  border: none;
+  margin: 0;
+}
+
 .lazyload,
 .lazyloading {
   opacity: 0;

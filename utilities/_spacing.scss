@@ -1,64 +1,185 @@
-@mixin make-spacing($props: null, $sides: null, $variants: null, $negative: false) {
+//
+//  Spacing Toolkit
+//
+//  Utility classes for spacing elements.
+//
+//  Follows the structure [negative?][prop][direction][sizing], with:
+//  * [negative]:  n-
+//  * [prop]:      (m)argin or (p)adding
+//  * [direction]: (all), (t)op, (r)ight, (b)ottom, (l)eft, (h)orizontal, (v)ertical
+//  * [sizing]:    one of the spacing units defined in _settings.scss, or 0
+//
+//  Notes:
+//  * The plus ('+') character is allowed in selector names, but must be escaped.
+//  * No negative paddings are defined, and not all positive margin classes have negative equivalents.
+//  * Horizontal and Vertical margins aren't breakpoint-prefixed.
+//
 
-  $props: m p !default;
-  $sides: a t r b l h v !default;
-  $variants: '' '-' '--' '---' '+' '++' '+++' '0' !default;
+//
+// Margin
+//
 
-  $props-map: (
-    m: margin,
-    p: padding
-  );
+@include each-bp($max-width: false) {
 
-  $sides-map: (
-    a:  '',
-    t:  '-top',
-    r:  '-right',
-    b:  '-bottom',
-    l:  '-left',
-    h:  ('-left' '-right'),
-    v:  ('-top'  '-bottom')
-  );
+  #{$each-bp}ma       { margin: spacing(); }
+  #{$each-bp}ma-      { margin: spacing('-'); }
+  #{$each-bp}ma--     { margin: spacing('--'); }
+  #{$each-bp}ma---    { margin: spacing('---'); }
+  #{$each-bp}ma\+     { margin: spacing('+'); }
+  #{$each-bp}ma\+\+   { margin: spacing('++'); }
+  #{$each-bp}ma\+\+\+ { margin: spacing('+++'); }
+  #{$each-bp}ma0      { margin: 0; }
 
-  // Negative selector prefix (n-) and value multiplier (-1)
-  $negative-prefix:     if($negative, 'n-', '');
-  $negative-multiplier: if($negative, -1, 1);
+  #{$each-bp}mt       { margin-top: spacing(); }
+  #{$each-bp}mt-      { margin-top: spacing('-'); }
+  #{$each-bp}mt--     { margin-top: spacing('--'); }
+  #{$each-bp}mt---    { margin-top: spacing('---'); }
+  #{$each-bp}mt\+     { margin-top: spacing('+'); }
+  #{$each-bp}mt\+\+   { margin-top: spacing('++'); }
+  #{$each-bp}mt\+\+\+ { margin-top: spacing('+++'); }
+  #{$each-bp}mt0      { margin-top: 0; }
 
-  // m or p
-  @each $prop in $props {
-    // 'margin' or 'padding'
-    $prop-name: map-get($props-map, $prop);
+  #{$each-bp}mr       { margin-right: spacing(); }
+  #{$each-bp}mr-      { margin-right: spacing('-'); }
+  #{$each-bp}mr--     { margin-right: spacing('--'); }
+  #{$each-bp}mr---    { margin-right: spacing('---'); }
+  #{$each-bp}mr\+     { margin-right: spacing('+'); }
+  #{$each-bp}mr\+\+   { margin-right: spacing('++'); }
+  #{$each-bp}mr\+\+\+ { margin-right: spacing('+++'); }
+  #{$each-bp}mr0      { margin-right: 0; }
 
-    // t, r, b, h, etc.
-    @each $side in $sides {
-      // -top, -right, -bottom, (-left, -right), etc.
-      $side-suffixes: map-get($sides-map, $side);
+  #{$each-bp}mb       { margin-bottom: spacing(); }
+  #{$each-bp}mb-      { margin-bottom: spacing('-'); }
+  #{$each-bp}mb--     { margin-bottom: spacing('--'); }
+  #{$each-bp}mb---    { margin-bottom: spacing('---'); }
+  #{$each-bp}mb\+     { margin-bottom: spacing('+'); }
+  #{$each-bp}mb\+\+   { margin-bottom: spacing('++'); }
+  #{$each-bp}mb\+\+\+ { margin-bottom: spacing('+++'); }
+  #{$each-bp}mb0      { margin-bottom: 0; }
 
-      // '', '-', '+', '++'
-      @each $variant in $variants {
-        // 1em, 0.5em, 1.5em, 2.5em
-        $spacing-value: spacing($variant);
-        // escaped variant name: '', '-', '\\+', '\\+\\+'
-        // pluses have meaning as css selectors, so they need to be escaped
-        // needs double slash because slash is to be output to the final css
-        $variant-escaped: str-replace($variant, '+', '\\+');
+  #{$each-bp}ml       { margin-left: spacing(); }
+  #{$each-bp}ml-      { margin-left: spacing('-'); }
+  #{$each-bp}ml--     { margin-left: spacing('--'); }
+  #{$each-bp}ml---    { margin-left: spacing('---'); }
+  #{$each-bp}ml\+     { margin-left: spacing('+'); }
+  #{$each-bp}ml\+\+   { margin-left: spacing('++'); }
+  #{$each-bp}ml\+\+\+ { margin-left: spacing('+++'); }
+  #{$each-bp}ml0      { margin-left: 0; }
 
-        // selector declaration
-        .#{$negative-prefix}#{$prop}#{$side}#{$variant-escaped} {
-
-          // in case there's more than one property in the $side (h or v)
-          @each $side-suffix in $side-suffixes {
-
-            // property declaration
-            #{$prop-name}#{$side-suffix}: $negative-multiplier * $spacing-value;
-
-          }
-        }
-      }
-    }
-  }
 }
 
-// Make complete positive spacing
-@include make-spacing;
-// Make negative spacing for side margins, in default, +, and ++ variants
-@include make-spacing($props: m, $sides: t r b l, $variants: '' '+' '++', $negative: true);
+.mh       { margin-left: spacing();       margin-right: spacing(); }
+.mh-      { margin-left: spacing('-');    margin-right: spacing('-'); }
+.mh--     { margin-left: spacing('--');   margin-right: spacing('--'); }
+.mh---    { margin-left: spacing('---');  margin-right: spacing('---'); }
+.mh\+     { margin-left: spacing('+');    margin-right: spacing('+'); }
+.mh\+\+   { margin-left: spacing('++');   margin-right: spacing('++'); }
+.mh\+\+\+ { margin-left: spacing('+++');  margin-right: spacing('+++'); }
+.mh0      { margin-left: 0;               margin-right: 0; }
+
+.mv       { margin-top: spacing();        margin-bottom: spacing(); }
+.mv-      { margin-top: spacing('-');     margin-bottom: spacing('-'); }
+.mv--     { margin-top: spacing('--');    margin-bottom: spacing('--'); }
+.mv---    { margin-top: spacing('---');   margin-bottom: spacing('---'); }
+.mv\+     { margin-top: spacing('+');     margin-bottom: spacing('+'); }
+.mv\+\+   { margin-top: spacing('++');    margin-bottom: spacing('++'); }
+.mv\+\+\+ { margin-top: spacing('+++');   margin-bottom: spacing('+++'); }
+.mv0      { margin-top: 0;                margin-bottom: 0; }
+
+
+
+
+
+//
+// Padding
+//
+@include each-bp($max-width: false) {
+
+  #{$each-bp}pa       { padding: spacing(); }
+  #{$each-bp}pa-      { padding: spacing('-'); }
+  #{$each-bp}pa--     { padding: spacing('--'); }
+  #{$each-bp}pa---    { padding: spacing('---'); }
+  #{$each-bp}pa\+     { padding: spacing('+'); }
+  #{$each-bp}pa\+\+   { padding: spacing('++'); }
+  #{$each-bp}pa\+\+\+ { padding: spacing('+++'); }
+  #{$each-bp}pa0      { padding: 0; }
+
+  #{$each-bp}pt       { padding-top: spacing(); }
+  #{$each-bp}pt-      { padding-top: spacing('-'); }
+  #{$each-bp}pt--     { padding-top: spacing('--'); }
+  #{$each-bp}pt---    { padding-top: spacing('---'); }
+  #{$each-bp}pt\+     { padding-top: spacing('+'); }
+  #{$each-bp}pt\+\+   { padding-top: spacing('++'); }
+  #{$each-bp}pt\+\+\+ { padding-top: spacing('+++'); }
+  #{$each-bp}pt0      { padding-top: 0; }
+
+  #{$each-bp}pr       { padding-right: spacing(); }
+  #{$each-bp}pr-      { padding-right: spacing('-'); }
+  #{$each-bp}pr--     { padding-right: spacing('--'); }
+  #{$each-bp}pr---    { padding-right: spacing('---'); }
+  #{$each-bp}pr\+     { padding-right: spacing('+'); }
+  #{$each-bp}pr\+\+   { padding-right: spacing('++'); }
+  #{$each-bp}pr\+\+\+ { padding-right: spacing('+++'); }
+  #{$each-bp}pr0      { padding-right: 0; }
+
+  #{$each-bp}pb       { padding-bottom: spacing(); }
+  #{$each-bp}pb-      { padding-bottom: spacing('-'); }
+  #{$each-bp}pb--     { padding-bottom: spacing('--'); }
+  #{$each-bp}pb---    { padding-bottom: spacing('---'); }
+  #{$each-bp}pb\+     { padding-bottom: spacing('+'); }
+  #{$each-bp}pb\+\+   { padding-bottom: spacing('++'); }
+  #{$each-bp}pb\+\+\+ { padding-bottom: spacing('+++'); }
+  #{$each-bp}pb0      { padding-bottom: 0; }
+
+  #{$each-bp}pl       { padding-left: spacing(); }
+  #{$each-bp}pl-      { padding-left: spacing('-'); }
+  #{$each-bp}pl--     { padding-left: spacing('--'); }
+  #{$each-bp}pl---    { padding-left: spacing('---'); }
+  #{$each-bp}pl\+     { padding-left: spacing('+'); }
+  #{$each-bp}pl\+\+   { padding-left: spacing('++'); }
+  #{$each-bp}pl\+\+\+ { padding-left: spacing('+++'); }
+  #{$each-bp}pl0      { padding-left: 0; }
+
+}
+
+.ph       { padding-left: spacing();       padding-right: spacing(); }
+.ph-      { padding-left: spacing('-');    padding-right: spacing('-'); }
+.ph--     { padding-left: spacing('--');   padding-right: spacing('--'); }
+.ph---    { padding-left: spacing('---');  padding-right: spacing('---'); }
+.ph\+     { padding-left: spacing('+');    padding-right: spacing('+'); }
+.ph\+\+   { padding-left: spacing('++');   padding-right: spacing('++'); }
+.ph\+\+\+ { padding-left: spacing('+++');  padding-right: spacing('+++'); }
+.ph0      { padding-left: 0;               padding-right: 0; }
+
+.pv       { padding-top: spacing();        padding-bottom: spacing(); }
+.pv-      { padding-top: spacing('-');     padding-bottom: spacing('-'); }
+.pv--     { padding-top: spacing('--');    padding-bottom: spacing('--'); }
+.pv---    { padding-top: spacing('---');   padding-bottom: spacing('---'); }
+.pv\+     { padding-top: spacing('+');     padding-bottom: spacing('+'); }
+.pv\+\+   { padding-top: spacing('++');    padding-bottom: spacing('++'); }
+.pv\+\+\+ { padding-top: spacing('+++');   padding-bottom: spacing('+++'); }
+.pv0      { padding-top: 0;                padding-bottom: 0; }
+
+
+
+
+
+//
+// Negative Margin
+//
+
+.n-mt     { margin-top: -1 * spacing(); }
+.n-mt\+   { margin-top: -1 * spacing('+'); }
+.n-mt\+\+ { margin-top: -1 * spacing('++'); }
+
+.n-mr     { margin-right: -1 * spacing(); }
+.n-mr\+   { margin-right: -1 * spacing('+'); }
+.n-mr\+\+ { margin-right: -1 * spacing('++'); }
+
+.n-mb     { margin-bottom: -1 * spacing(); }
+.n-mb\+   { margin-bottom: -1 * spacing('+'); }
+.n-mb\+\+ { margin-bottom: -1 * spacing('++'); }
+
+.n-ml     { margin-left: -1 * spacing(); }
+.n-ml\+   { margin-left: -1 * spacing('+'); }
+.n-ml\+\+ { margin-left: -1 * spacing('++'); }

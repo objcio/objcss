@@ -15,7 +15,7 @@
 }
 
 .filter-grayscale { filter: grayscale(100%); }
-.filter-blur-5   { filter: blur(5px); }
+.filter-blur-5    { filter: blur(5px); }
 
 .blend-normal      { mix-blend-mode: normal; }
 .blend-multiply    { mix-blend-mode: multiply; }
@@ -33,3 +33,14 @@
 .blend-saturation  { mix-blend-mode: saturation; }
 .blend-color       { mix-blend-mode: color; }
 .blend-luminosity  { mix-blend-mode: luminosity; }
+
+
+.transform-origin-center { transform-origin: center; }
+.transform-origin-n      { transform-origin: top; }
+.transform-origin-ne     { transform-origin: top right; }
+.transform-origin-e      { transform-origin: right; }
+.transform-origin-se     { transform-origin: right bottom; }
+.transform-origin-s      { transform-origin: bottom; }
+.transform-origin-sw     { transform-origin: bottom left; }
+.transform-origin-w      { transform-origin: left; }
+.transform-origin-nw     { transform-origin: top left; }

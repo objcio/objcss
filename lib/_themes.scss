@@ -1,0 +1,139 @@
+//
+// Theme List
+//
+$themes: ();
+
+// 1. Default Theme
+$themes: map-merge($themes, (
+  'default': (
+    'main':       color('blue'),
+    'highlight':  color('orange'),
+    'nav':        color('blue'),
+  )
+));
+
+// 2. Book Themes
+@each $book in $books {
+  $themes: map-merge($themes, (
+    $book: (
+      'main':      book-color($book, 'bottom'),
+      'highlight': book-color($book, 'top'),
+      'nav':       book-color($book, 'bottom')
+    )
+  ));
+}
+
+// 3. Bundle Themes
+@each $bundle in $bundles {
+  $themes: map-merge($themes, (
+    $bundle: (
+      'main':      bundle-color($bundle),
+      'highlight': bundle-color($bundle),
+    )
+  ));
+}
+
+@function theme-map($theme-name) {
+  @return map-get($themes, $theme-name);
+}
+
+@function theme-color($theme-name, $keyword, $fallback: null) {
+  $color: map-get(theme-map($theme-name), $keyword);
+  @if ($color == null) { $color: $fallback; }
+  @if ($color == null) { @error "Theme doesn’t have color with keyword '#{$keyword}', you must provide a fallback." }
+  @return $color;
+}
+
+@function theming($keyword, $fallback: null) {
+  @return theme-color($_theme, $keyword, $fallback);
+}
+
+
+
+
+
+//
+// Theme Styling Mixin
+// Use when there needs to more custom styling than the theme coloring utility classes allow.
+//
+@mixin theming($filter: null) {
+
+  // Save the parent selector (if any)
+  $parent: &;
+
+  // Iterate through the themes
+  @each $theme, $_ in $themes {
+
+    // Iterate through this time if
+    // … there is no filter
+    // … there is a filter, and this theme is in it
+    @if ($filter == null or index($filter, $theme)) {
+
+      // Set the current theme name as a global variable,
+      // so it can be access in the @content passed to the mixin
+      $_theme: $theme !global;
+
+      // Always set the selector at root level…
+      @at-root {
+
+        // …but include the parent (if any), so the mixin
+        // can be called both at root and selector level.
+        //                  |
+        //                  ↓
+        .theme-#{$theme} #{$parent} {
+          @content;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+//
+// Theme Scoping Configuration
+//
+// Keys:
+// - theme modifier class
+// - blank for global theming
+//
+// Values:
+// - whether to nest or append the color selectors, or both
+// - must be 'nest', 'append', or 'both', as per the theme-color-selector mixin
+$theme-scoping: (
+  '': 'nest',
+  '.is-scoped-theme': 'both',
+  '.is-element-theme': 'append'
+);
+
+
+
+//
+// Build Theme Colors
+//
+// This outputs all the selectors (color/bgcolor)-theme-[keyword] selectors for
+// theme styling, prepared them for nesting under .theme-[theme_name] selectors.
+//
+// NOTE: This mixin should never be called if not in a .theme-[theme_name] selector.
+//
+@mixin theme-color-selectors($theme, $mode: 'nest') {
+  // For each of the color keywords
+  @each $color-keyword, $_ in theme-map($theme) {
+    // For each of the color properties
+    @each $shorthand, $property in ('color': 'color', 'bgcolor': 'background-color') {
+      // Utility class's name
+      $classname: '#{$shorthand}-theme-#{$color-keyword}';
+      // Build the selector
+      $selector: '';
+      @if      ($mode == 'nest')   { $selector: '.#{$classname}' }
+      @else if ($mode == 'append') { $selector: '&.#{$classname}' }
+      @else if ($mode == 'both')   { $selector: '.#{$classname}, &.#{$classname}' }
+      @else { @error "theme-color-selector: $mode must be 'nest', 'append', or 'both'" }
+      // Output the selector and props
+      #{$selector} {
+        #{$property}: theme-color($theme, $color-keyword);
+      }
+    }
+  }
+}

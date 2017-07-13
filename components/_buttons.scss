@@ -1,3 +1,4 @@
+// TODO check if these buttons are used anywhere
 .c-button {
   appearance: none;
 
@@ -130,11 +131,58 @@
   }
 }
 
+
+
+
+
+.button {
+  display: inline-block;
+  margin: 0;
+
+  // Use the same size as the bordered-button, accounting
+  // for the 2px border which isn't present here.
+  padding:     .9em;
+  padding:     calc(.9em + 2px);
+  padding-top: .8em;
+  padding-top: calc(.8em + 2px);
+
+  border-radius: 5px;
+
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1;
+
+  color: white;
+
+  background-color: $c-blue;
+  &:hover, &:focus { color: $c-orange; }
+
+  &--themed {
+    @include theming {
+      background-color: theming('main');
+      $highlight-color: if(theming('main') == theming('highlight'), gray(15%), theming('highlight'));
+      &:hover, &:focus { background-color: $highlight-color; }
+    }
+  }
+
+  &--themed-highlight {
+    @include theming {
+      background-color: theming('highlight');
+      &:hover, &:focus { background-color: gray(15%); }
+    }
+  }
+}
+
+
+
+
+
 .bordered-button {
   display: inline-block;
   margin: 0;
-  padding: 1em;
-  padding-top: .9em;
+
+  padding:     .9em;
+  padding-top: .8em;
 
   font-weight: bold;
   text-decoration: none;
@@ -143,26 +191,35 @@
   border: solid 2px;
   border-radius: 5px;
 
-  // blue with orange hover
-  color: $c-blue;
-  &:hover, &:focus { color: $c-orange; }
   // base theme color with accent hover
-  @include theme-styling {
-    color: $_base;
-    &:hover, &:focus { color: $_accent; }
+  &--themed {
+    @include theming {
+      color: theming('main');
+      $highlight-color: if(theming('main') == theming('highlight'), gray(15%), theming('highlight'));
+      &:hover, &:focus { color: $highlight-color; }
+    }
+  }
+
+  &--white {
+    color: white;
+    &:hover, &:focus {
+      border-color: white;
+      background-color: white;
+      @include theming {
+        color: theming('main');
+      }
+    }
   }
 }
 
-.bordered-button--accent {
-  color: $c-orange;
-  @include theme-styling { color: $_accent; }
-}
 
 
-.button-arrow {
+
+
+.arrowed-button {
   display: flex !important;
   flex-flow: row nowrap;
-  align-items: baseline;
+  align-items: center;
 
   &::after {
     content: '→';
@@ -172,7 +229,11 @@
     margin-left: auto;
   }
 
-  &.bordered-button::after {
-    @include theme-styling { color: $_accent; }
+  &.bordered-button--themed::after {
+    @include theming { color: theming('highlight'); }
+  }
+
+  &.bordered-button--white::after {
+    color: inherit;
   }
 }

@@ -27,18 +27,13 @@
 .hover-bgcolor-blue-darkest:focus { background-color: $c-blue-darkest; }
 .hover-bgcolor-orange:hover,
 .hover-bgcolor-orange:focus       { background-color: $c-orange; }
+.hover-bgcolor-gray-97:hover,
+.hover-bgcolor-gray-97:focus      { background-color: gray(97%); }
 
-@each $theme, $_ in $themes {
-  .t-#{$theme} {
-    .hover-color-theme-base:hover,
-    .hover-color-theme-base:focus      { color: theme-color($theme, base); }
-    .hover-color-theme-accent:hover,
-    .hover-color-theme-accent:focus    { color: theme-color($theme, accent); }
-
-    .hover-bgcolor-theme-base:hover,
-    .hover-bgcolor-theme-base:focus   { background-color: theme-color($theme, base); }
-    .hover-bgcolor-theme-accent:hover,
-    .hover-bgcolor-theme-accent:focus { background-color: theme-color($theme, accent); }
+@include theming {
+  @each $keyword in ('main', 'highlight') {
+    .hover-color-theme-#{$keyword}:hover   { color: theming($keyword); }
+    .hover-bgcolor-theme-#{$keyword}:hover { background-color: theming($keyword); }
   }
 }
 
@@ -50,3 +45,7 @@
 .hover-cascade:hover .hover-cascade__hide       { display: none; }
 .hover-cascade:hover .hover-cascade__block      { display: block; }
 .hover-cascade:hover .hover-cascade__inline     { display: inline; }
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}

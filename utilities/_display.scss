@@ -18,6 +18,11 @@
   #{$each-bp}position-nw { top: 0; left: 0; }
 }
 
+.position-outside-n { bottom: 100%; }
+.position-outside-e { left:   100%; }
+.position-outside-s { top:    100%; }
+.position-outside-w { right:  100%; }
+
 .position-stretch {
   top: 0;
   left: 0;
@@ -31,8 +36,9 @@
 .z-10  { z-index: 10; }
 .z-100 { z-index: 100; }
 
-.overflow-hidden { overflow: hidden; }
-.overflow-auto   { overflow: auto; }
+.overflow-hidden   { overflow: hidden; }
+.overflow-auto     { overflow: auto; }
+.overflow-visible  { overflow: visible; }
 
 .opacity-10 { opacity: 0.1; }
 .opacity-20 { opacity: 0.2; }
@@ -75,3 +81,5 @@
 .is-active .inline-block-if-active { display: inline-block; }
 
 .hide-if-empty:empty { display: none; }
+
+.appearance-none { appearance: none; }

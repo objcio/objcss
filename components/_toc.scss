@@ -20,6 +20,7 @@
     display: none !important;
   }
 }
+
 .c-toc__header {
   display: table-cell;
   vertical-align: middle;
@@ -28,8 +29,9 @@
   height:    modular(6);
   padding-left: modular(2);
   font-weight: bold;
-  color: gray(35%);
+  color: gray(30%);
 }
+
 .c-toc__body {
   border-top: solid 1px gray(90%);
   font-size: modular(-1);
@@ -37,23 +39,40 @@
   line-height: 1.2;
   overflow-x: hidden;
   overflow-y: auto;
-  
+
   $indent-base: 1em;
 
   li ol {
     border-left: dotted 1px gray(90%);
     padding-left: 1.2em;
   }
-  
+
   a {
     display: block;
-    padding: .5em 0;
-    color: gray(55%);
+    padding: .45em 0;
+    color: gray(40%);
     text-decoration: none;
   }
 
+  // When a TOC item is the one the user is currently
+  // reading, that item gets marked by JS as .is-visible
   a.is-visible {
     color: $c-blue;
+    font-weight: bold;
+    @include theming {
+      color: theming('main');
+    }
+  }
+
+  // TOC items which link to hidden headers
+  // (this happens on Online Preview pages)
+  a.is-blocked {
+    text-decoration: line-through;
+    cursor: not-allowed;
+
+    &, &:hover, &:focus {
+      color: gray(60%);
+    }
   }
 
   a:hover, a:focus {
@@ -61,15 +80,16 @@
     outline: none;
   }
 
+  // Making 2+ level items smaller
   ol ol a {
     font-size: .9em;
-    padding: (0.5em / .9) 0;
   }
 
   code {
-    word-wrap: break-word; 
+    word-wrap: break-word;
   }
 
+  // TOC can be automatically numbered
   .c-toc--numbered & > ol > li > a {
     counter-increment: toc;
     &:before {
@@ -77,4 +97,3 @@
     }
   }
 }
-

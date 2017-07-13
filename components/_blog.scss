@@ -1,8 +1,0 @@
-@import 'blog/blog-post';
-@import 'blog/blog-postlist';
-
-.c-blog-heading {
-  @include smallcaps;
-  color: $c-orange;
-  margin-bottom: spacing('++');
-}

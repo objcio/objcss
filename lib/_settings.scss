@@ -1,0 +1,141 @@
+$em-base: 20px;
+$gutter:  2em;
+
+$modular-scale-base: 1em;
+$modular-scale-ratio: 1.2;
+$type-sans: AkkuratTT, sans-serif;
+$type-mono: AkkuratMono, Consolas, Monaco, monospace;
+$smallcaps-factor: .8;
+
+$wrap-width: 65em;
+$text-width: 38em;
+
+$code-radius: 5px;
+
+$logo-width-height-ratio: 528 / 158;
+
+
+
+$spacings: (
+  '+++': 4em,
+  '++':  2em,
+  '+':   1.5em,
+  '':    1em,
+  '-':   0.5em,
+  '--':  0.25em,
+  '---': 0.15em,
+  '0':   0
+);
+@function spacing($modifier: '') {
+  @return map-get($spacings, $modifier);
+}
+
+
+
+$bps: (
+  xs: 400px,
+  s:  550px,
+  m:  700px,
+  l:  850px,
+  xl: 1000px
+);
+@function bp($width) {
+  @return map-get($bps, $width);
+}
+
+
+
+//
+// Named Colors
+//
+$colors: (
+  'blue':           hsl(200, 100%, 43%),
+  'blue-shade':     hsl(200, 100%, 38%),
+  'blue-dark':      hsl(200, 100%, 31%),
+  'blue-darker':    hsl(200, 100%, 23%),
+  'blue-darkest':   hsl(200, 100%, 18%),
+  'purple':         #8647B3,
+  'orange':         #FFA940,
+  'orange-dark':    #FB9254,
+  'orange-darker':  #FA6B4A,
+  'invalid':        #FF4040,
+  'white':          #FFFFFF,
+  'black':          #000000
+);
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+
+
+//
+// Named *Background-specific* Colors
+// These should only be in addition to the main colors, never duplicates.
+// NOTE: Do NOT reuse names in $colors.
+//
+$bgcolors: (
+  'code-block':  gray(97%),
+  'code-inline': gray(95%),
+  'gray':        #F8F8F8,
+);
+@function bgcolor($name) {
+  @return map-get($bgcolors, $name);
+}
+
+
+
+$book-colors: (
+  'functional-swift':       ('top': #F2AE39, 'bottom': #D82D3B),
+  'core-data':              ('top': #059ADF, 'bottom': #2E3B92),
+  'advanced-swift':         ('top': #DD1388, 'bottom': #80288E),
+  'optimizing-collections': ('top': #16DEA9, 'bottom': #097DAB)
+);
+
+$books: map-keys($book-colors);
+
+@function book-color($book, $key) {
+  @return map-get(map-get($book-colors, $book), $key);
+}
+
+
+
+$bundle-colors: (
+  'complete-collection': #F8BA5E,
+  'swift':               #EE6868
+);
+
+$bundles: map-keys($bundle-colors);
+
+@function bundle-color($bundle) {
+  @return map-get($bundle-colors, $bundle);
+};
+
+
+
+
+
+
+
+
+// TODO find a way to incorporate this somehow
+$c-swifttalk: (
+  start: #FB9254,
+  stop: #FA6B4A
+);
+
+
+
+// TODO Get rid of these, find/replace everywhere
+$c-blue:          color('blue');
+$c-blue-shade:    color('blue-shade');
+$c-blue-dark:     color('blue-dark');
+$c-blue-darker:   color('blue-darker');
+$c-blue-darkest:  color('blue-darkest');
+$c-purple:        color('purple');
+$c-orange:        color('orange');
+$c-orange-dark:   color('orange-dark');
+$c-orange-darker: color('orange-darker');
+$c-invalid:       color('invalid');
+$code-block-bg:   bgcolor('code-block');
+$code-inline-bg:  bgcolor('code-inline');
+$c-gray-bg:       bgcolor('gray');

@@ -1,0 +1,9 @@
+.numbered-h1s {
+  counter-reset: numbered-h1s;
+  h1 {
+    counter-increment: numbered-h1s;
+    &:before {
+      content: counter(numbered-h1s) ". ";
+    }
+  }
+}

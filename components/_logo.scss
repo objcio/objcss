@@ -1,27 +1,26 @@
-$logo-width-height-ratio: 528 / 158;
-
 .logo {
   height: 1.7em;
   width: 1.7em * $logo-width-height-ratio;
   transition: fill 150ms ease-in-out;
 }
 
-.logo #letters {
-  fill: $c-blue;
-}
-.logo #arrows,
-a.logo:hover #letters,
-a .logo:hover #letters {
-  fill: $c-orange;
+@mixin logo-colors($base-color, $arrow-and-hover-color) {
+  & #letters {
+    fill: $base-color;
+  }
+
+  & #arrows,
+  &:hover #letters {
+    fill: $arrow-and-hover-color;
+  }
 }
 
-@include theme-styling {
-  .logo--themed #letters {
-    fill: $_base;
+@include theming {
+  .logo--themed {
+    @include logo-colors(theming('nav', gray(30%)), theming('highlight'));
   }
-  .logo--themed #arrows,
-  a.logo--themed:hover #letters,
-  a .logo--themed:hover #letters {
-    fill: $_accent;
-  }
+}
+
+.logo--white {
+  @include logo-colors(white, rgba(white, 0.75));
 }

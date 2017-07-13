@@ -3,7 +3,7 @@ $arrow-pattern-white: arrow-pattern($arrows: #FFFFFF);
 $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
 
 // Base arrow pattern
-%bg-pattern {
+%pattern {
   background-size:       em(300) em(240);
   background-position:   center -1em;
   background-attachment: fixed;
@@ -11,24 +11,24 @@ $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
 
 // 1. Solid background patterns
 // 1.1. Blue background, darker blue arrows.
-.bg-pattern-blue {
-  @extend %bg-pattern;
+.pattern-blue {
+  @extend %pattern;
   background-color: $c-blue;
   background-image: arrow-pattern($arrows: $c-blue-shade);
 }
 // 1.2. Dark blue background, blue arrows
-.bg-pattern-blue-reverse {
-  @extend %bg-pattern;
+.pattern-blue-reverse {
+  @extend %pattern;
   background-color: $c-blue-shade;
   background-image: arrow-pattern($arrows: $c-blue);
 }
-.bg-pattern-orange {
-  @extend %bg-pattern;
+.pattern-orange {
+  @extend %pattern;
   background-color: $c-orange;
   background-image: arrow-pattern($arrows: $c-orange-dark);
 }
-.bg-pattern-orange-reverse {
-  @extend %bg-pattern;
+.pattern-orange-reverse {
+  @extend %pattern;
   background-color: $c-orange-dark;
   background-image: arrow-pattern($arrows: $c-orange);
 }
@@ -36,37 +36,39 @@ $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
 
 // 2. Arrows used to build patterns over another background
 // 2.1. Black translucent arrows
-.bg-pattern-shade {
-  @extend %bg-pattern;
+.pattern-shade {
+  @extend %pattern;
   background-image: $arrow-pattern-shade;
 }
 // 2.2. White translucent
-.bg-pattern-light {
-  @extend %bg-pattern;
+.pattern-light {
+  @extend %pattern;
   background-image: $arrow-pattern-light;
 }
 // 2.3. White arrows
-.bg-pattern-white {
-  @extend %bg-pattern;
+.pattern-white {
+  @extend %pattern;
   background-image: $arrow-pattern-white;
 }
 
 
 
+//
 // 3. Gradient patterns
-.bg-pattern-gradient {
+//
+.pattern-gradient {
   background-size:       em(300) em(240), auto auto;
   background-position:   center -1em,     top left;
   background-attachment: fixed,           scroll;
 
-  @mixin bg-pattern-gradient($start, $stop) {
+  @mixin pattern-gradient($start, $stop) {
     background-color: $stop;
     background-image: $arrow-pattern-shade, linear-gradient($start, $stop);
   }
 
   // 3.1 For Swift Talk
   &--swifttalk {
-    @include bg-pattern-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
+    @include pattern-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
   }
 
   &--gray-white {
@@ -75,9 +77,9 @@ $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
   }
 
   // 3.2. For each book
-  @each $book-slug, $book-gradient in $c-book {
-    &--#{$book-slug} {
-      @include bg-pattern-gradient(map-get($book-gradient, start), map-get($book-gradient, stop));
+  @each $book, $_ in $book-colors {
+    &--#{$book} {
+      @include pattern-gradient(book-color($book, 'top'), book-color($book, 'bottom'));
     }
   }
 

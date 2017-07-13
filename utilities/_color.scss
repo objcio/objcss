@@ -1,21 +1,9 @@
-// Colors
+//
+// Basic Colors
+//
 
 .color-current       { color: currentColor; }
 .color-inherit       { color: inherit; }
-
-.color-blue          { color: $c-blue; }
-.color-blue-shade    { color: $c-blue-shade; }
-.color-blue-dark     { color: $c-blue-dark; }
-.color-blue-darker   { color: $c-blue-darker; }
-.color-blue-darkest  { color: $c-blue-darkest; }
-.color-purple        { color: $c-purple; }
-.color-orange        { color: $c-orange; }
-.color-orange-dark   { color: $c-orange-dark; }
-.color-orange-darker { color: $c-orange-darker; }
-.color-invalid       { color: $c-invalid; }
-
-.color-black         { color: black; }
-.color-white         { color: white; }
 
 .color-gray-10       { color: gray(10%); }
 .color-gray-15       { color: gray(15%); }
@@ -36,23 +24,22 @@
 .color-gray-90       { color: gray(90%); }
 .color-gray-95       { color: gray(95%); }
 
+.color-darken-65 { color: rgba(0, 0, 0, 0.65); }
+.color-darken-50 { color: rgba(0, 0, 0, 0.50); }
+.color-darken-35 { color: rgba(0, 0, 0, 0.35); }
+
+// Named Colors
+@each $color-keyword, $color-value in $colors {
+  .color-#{$color-keyword} {
+    color: $color-value;
+  }
+}
 
 
-// Background Colors
 
-.bgcolor-blue          { background-color: $c-blue; }
-.bgcolor-blue-shade    { background-color: $c-blue-shade; }
-.bgcolor-blue-dark     { background-color: $c-blue-dark; }
-.bgcolor-blue-darker   { background-color: $c-blue-darker; }
-.bgcolor-blue-darkest  { background-color: $c-blue-darkest; }
-.bgcolor-purple        { background-color: $c-purple; }
-.bgcolor-orange        { background-color: $c-orange; }
-.bgcolor-orange-dark   { background-color: $c-orange-dark; }
-.bgcolor-orange-darker { background-color: $c-orange-darker; }
-.bgcolor-invalid       { background-color: $c-invalid; }
-
-.bgcolor-black         { background-color: black; }
-.bgcolor-white         { background-color: white; }
+//
+// Basic Background Colors
+//
 
 .bgcolor-gray-10       { background-color: gray(10%); }
 .bgcolor-gray-15       { background-color: gray(15%); }
@@ -72,31 +59,87 @@
 .bgcolor-gray-85       { background-color: gray(85%); }
 .bgcolor-gray-90       { background-color: gray(90%); }
 .bgcolor-gray-95       { background-color: gray(95%); }
+.bgcolor-gray-96       { background-color: gray(96%); }
 .bgcolor-gray-97       { background-color: gray(97%); }
 
+.bgcolor-darken-65 { background-color: rgba(0, 0, 0, 0.65); }
+.bgcolor-darken-50 { background-color: rgba(0, 0, 0, 0.50); }
+.bgcolor-darken-35 { background-color: rgba(0, 0, 0, 0.35); }
 
-.bggradient {
-  @mixin bg-gradient($start, $stop) {
-    background-color: $stop;
-    background-image: linear-gradient($start, $stop);
-  }
-
-  &-swifttalk {
-    @include bg-gradient(map-get($c-swifttalk, start), map-get($c-swifttalk, stop));
-  }
-
-  @each $book-slug, $book-gradient in $c-book {
-    &-#{$book-slug} {
-      @include bg-gradient(map-get($book-gradient, start), map-get($book-gradient, stop));
-    }
+// Named Background Colors
+@each $color-keyword, $color-value in map-merge($colors, $bgcolors) {
+  .bgcolor-#{$color-keyword} {
+    background-color: $color-value;
   }
 }
 
-@each $theme, $_ in $themes {
-  .t-#{$theme} {
-    .color-theme-base      { color: theme-color($theme, base); }
-    .color-theme-accent    { color: theme-color($theme, accent); }
-    .bgcolor-theme-base   { background-color: theme-color($theme, base); }
-    .bgcolor-theme-accent { background-color: theme-color($theme, accent); }
+
+
+//
+// Book Colors
+//
+@each $book, $book-color-map in $book-colors {
+  @each $keyword, $color in $book-color-map {
+    .color-book-#{$book}-#{$keyword}   { color: $color; }
+    .bgcolor-book-#{$book}-#{$keyword} { background-color: $color; }
+  }
+}
+
+
+
+//
+// Bundle Colors
+//
+@each $bundle, $color in $bundle-colors {
+  .color-bundle-#{$bundle}   { color: $color; }
+  .bgcolor-bundle-#{$bundle} { background-color: $color; }
+}
+
+
+
+
+
+//
+// Theme Colors
+//
+// Theme-dependent colors are available has utility classes, as
+// .(color/bgcolor)-theme-[keyword], where [keyword] is one of
+// the color keywords defined in _themes.scss.
+// - e.g. .color-theme-main, .bgcolor-theme-highlight
+//
+// It's possible to set the theme with three specificity levels.
+//
+// 1) Global
+//  - At the global leve, a theme is set with theme-[name], usually
+//    on the <body> tag, and the utility classes specified above
+//    will use the defined theme's settings.
+//  - Additionally, layout elements such as header and footer, as well
+//    as namespaces like text and links, will be styled by default.
+//  - Themes available are the default theme, book themes, and bundle themes,
+//    e.g. .theme-default, .theme-core-data, .theme-complete-collection
+//
+// 2) Scope (.is-scoped-theme)
+//  - When it's necessary to set a theme on a component, but the page
+//    has a different theme set, use the .is-scoped-theme on theme declaration,
+//    e.g. <div class="theme-complete-collection is-scoped-theme">
+//  - This makes it possible to, for example, on a bundle page (which is themed),
+//    style each of the bundle’s books with the book colors.
+//  - It’s NOT possible to nest scoped themes, these are merely meant to override
+//    particular components of a page.
+//
+// 3) Element (.is-element-theme)
+//  - When it’s necessary to set a theme on a single element, but the page has
+//    a different theme set, use the .is-element-theme on the theme declaration,
+//    but make the theme declaration on the element itself, where the theme color
+//    utility will also be used.
+//    e.g. <hr class="theme-advanced-swift is-element-theme color-theme-highlight">
+//  - It’s possible to do element theming inside a component with scoped theming,
+//    as element themes will override scoped themes.
+//
+@each $modifier, $selector-style in $theme-scoping {
+  @each $theme, $_ in $themes {
+    .theme-#{$theme}#{$modifier} {
+      @include theme-color-selectors($theme, $selector-style);
+    }
   }
 }
