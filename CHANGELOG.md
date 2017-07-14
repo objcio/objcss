@@ -34,7 +34,7 @@
 ### Namespaces
 
 * Added theming to the Links namespace.
-* Added a Numbered namespace, which prefixes elements with increasing numbers. Used for numbering `h1` on Online Previews of Books.*
+* Added a Numbered namespace, which prefixes elements with increasing numbers. Used for numbering `h1` on Online Previews of Books.
 * Added theming to the Text namespace.
 * Added special styles to the Text namespace to deal with code formatting in Books’ Online Previews.
 
@@ -76,7 +76,7 @@
 * Added Effects utilities `transform-origin-[X]`, with X being `center` or each of the cardinal and intercardinal directions.
 * Added Hover utility `hover-scale`.
 * Added Hover utilities for theme colors, as described above.
-* Added hover utility `hover-bgcolor-gray-97`.
+* Added Hover utility `hover-bgcolor-gray-97`.
 * Added Icon utility `icon-26` for 26px square icons.
 * Added Icon utilities `icon-scale-50` and `icon-scale-100` for scaling icons by 50% or 100% of their original size. This is done with the `font-size` property, not transforms.
 * Added Sizing utilities `height-(1-10)`, `height-auto`, `height-full`, `width-auto`.
