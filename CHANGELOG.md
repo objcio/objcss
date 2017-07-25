@@ -72,7 +72,9 @@
 * Added Border utilities `no-radius-top`, `no-radius-bottom`, which override border radius.
 * Added Border utility `border-stack`, which places borders in-between consecutive elements using the utility class name.
 * Added Display utilities `position-outside-n`, `position-outside-e`, `position-outside-s`, `position-outside-w`, which position elements at `100%` of `bottom`, `left`, `top`, and `right`, respectively. This allows for positioning elements at the outside edges of its relative container.
-* Added Display utilities `appearance-none` and `overflow-visible`.
+* Added Display utilities `overflow-visible`, `overflow-scroll`.
+* Added Display utility `appearance-none`.
+* Added Display utility `position-sticky`.
 * Added Effects utilities `transform-origin-[X]`, with X being `center` or each of the cardinal and intercardinal directions.
 * Added Hover utility `hover-scale`.
 * Added Hover utilities for theme colors, as described above.
