@@ -97,11 +97,17 @@ $books: map-keys($book-colors);
   @return map-get(map-get($book-colors, $book), $key);
 }
 
-
+// Colors Available:
+// #F8BA5E - yellow
+// #C97ECE - purple
+// #6BCAD6 - blue
+// #EE6868 - red
+// #9BCC5C - green
 
 $bundle-colors: (
-  'complete-collection': #F8BA5E,
-  'swift':               #EE6868
+  'complete-collection': #F8BA5E, // yellow
+  'swift-essentials':    #6BCAD6, // blue
+  'everything-swift':    #C97ECE  // purple
 );
 
 $bundles: map-keys($bundle-colors);
