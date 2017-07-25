@@ -1,0 +1,71 @@
+//
+// Scroller
+//
+// The scroller component provides native browser horizontal scrolling,
+// further enhanced with the JS scroller component.
+//
+
+
+// The container that will have horizontal scrolling
+.scroller {
+  // Scroll horizontally, but not vertically
+  overflow-x: scroll;
+  overflow-y: visible;
+  // Auto-hide the scrollbars in IE, i.e. only show during scrolling
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  // Use iOS like scrolling in webkit
+  -webkit-overflow-scrolling: touch;
+  // Don't show the scrollbar at all in webkit
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+// The scroller__offset element is used as the first element in a edge-to-edge scroller,
+// and pushes the first real element of the scroller so it's aligned with the wrapping size.
+.scroller__offset {
+  width: calc(50% - ( #{$wrap-width} / 2 ));
+  min-height: 1px;
+}
+
+
+// Buttons can be added to scroll the container, with JS enhancement.
+.scroller-button {
+  border: 0;
+  padding: .4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: $type-sans;
+  color: white;
+  cursor: pointer;
+
+  transition: background-color 200ms ease-in-out;
+
+  // Scroller buttons are themed by default
+  @include theming {
+    background-color: theming('main');
+    &:hover,
+    &:focus {
+      outline: none;
+      $hover: if(theming('main') == theming('highlight'), gray(15%), theming('highlight'));
+      background-color: $hover;
+    }
+  }
+
+  // Grayscale variant
+  &.scroller-button--grayscale {
+    background-color: gray(30%);
+    &:hover, &:focus {
+      background-color: black;
+    }
+  }
+
+  // Left/right buttons will be disabled if container is scrolled all the way to the left/right edge
+  &:disabled {
+    background-color: gray(90%) !important;
+    cursor: not-allowed !important;
+  }
+}

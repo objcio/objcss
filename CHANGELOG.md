@@ -45,6 +45,7 @@
   * `bordered-button` is a simple ghost button. `bordered-button--themed` colors it according to the theme’s colors.
   * `arrowed-button` is used together with one of the ones before, and it adds a → to the right side of the button.
   * Idea here is to eventually phase out the old buttons in favor of simpler ones.
+* Added a Scroller component, for horizontal content scrollers, as used to show Books and Bundles.
 * Added a mixin to Logo component to help style the logo’s parts `objc` / `↑↓` in different colors, but one single color on hover.
 * Added theming to the `--themed` modifier of the Logo component.
 * Added a `--white` modifier to the Logo component.
