@@ -77,6 +77,7 @@
 * Added Display utilities `overflow-visible`, `overflow-scroll`.
 * Added Display utility `appearance-none`.
 * Added Display utility `position-sticky`.
+* Added Flex utility `flex-1-1-0`, for growing and shrinking, but basis set to 0.
 * Added Effects utilities `transform-origin-[X]`, with X being `center` or each of the cardinal and intercardinal directions.
 * Added Hover utility `hover-scale`.
 * Added Hover utilities for theme colors, as described above.
