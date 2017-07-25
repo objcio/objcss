@@ -59,6 +59,8 @@
 * Removed the Preview Header and Preview Banner components
 * Removed the Sample component
 * Removed the Search component
+* Removed the Header component. Now styled with utility classes.
+* Removed the Footer component. Now styled with utility classes.
 
 ### Utilities
 
