@@ -54,12 +54,12 @@
 * Tweaked spacing on Label component.
 * Transformed Patterns from component to utilities file.
 * Moved `objcio/website`-specific components outside of `objcss`, namely `article`, `blog-post`, `blog-postlist`, `book`, `buy`, `contributors`, `feature-books`, `feature-newsletter`, `issue-unit`, `issue`, `post-article`, `post-issue`, and `store-modal`. This reduces file size on the `objcio/video-backend` project.
-* Removed the Book Box component
-* Removed the Book Button component
-* Removed the Page Header component
+* Removed the Book Box component. Changed display of books.
+* Removed the Book Button component. Changed to a different button style.
+* Removed the Page Header component. Now styled with utility classes.
 * Removed the Preview Header and Preview Banner components
-* Removed the Sample component
-* Removed the Search component
+* Removed the Sample component. It wasn't used anymore.
+* Removed the Search component. Now styled with utility classes.
 * Removed the Header component. Now styled with utility classes.
 * Removed the Footer component. Now styled with utility classes.
 

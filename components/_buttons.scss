@@ -171,6 +171,12 @@
       &:hover, &:focus { background-color: gray(15%); }
     }
   }
+
+  &[disabled],
+  &.is-disabled {
+    background-color: gray(75%) !important;
+    cursor: not-allowed;
+  }
 }
 
 
