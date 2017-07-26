@@ -19,6 +19,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  &.is-unscrollable {
+    cursor: auto !important;
+  }
 }
 
 
