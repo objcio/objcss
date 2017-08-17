@@ -1,5 +1,16 @@
 # objcss Changelog
 
+## TBD,
+
+### Components
+
+* Added `tight` variant to Button.
+
+### Utilities
+
+* Added `+++` variants of negative spacing.
+
+
 ## Books & Bundles, Spring/Summer 2017
 
 ### NEW: Theming

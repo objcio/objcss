@@ -157,6 +157,13 @@
   background-color: $c-blue;
   &:hover, &:focus { color: $c-orange; }
 
+  &--tight {
+    padding:     .7em;
+    padding:     calc(.7em + 2px);
+    padding-top: .65em;
+    padding-top: calc(.65em + 2px);
+  }
+
   &--themed {
     @include theming {
       background-color: theming('main');
