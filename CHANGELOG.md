@@ -1,14 +1,22 @@
 # objcss Changelog
 
-## TBD,
+## Collections
+
+### Globals, Settings, Setup
+
+* Changed XL breakpoint to 1100px.
 
 ### Components
 
 * Added `tight` variant to Button.
+* Added a 22:10 variant to Ratio.
 
 ### Utilities
 
-* Added `+++` variants of negative spacing.
+* Added `+++` variants of negative spacing to Spacing utility.
+* Added Gradient utility `gradient-episode-color` for ST episode tint effect.
+* Added Text utilities `lh-135` and `hyphens`.
+* Changed Text utility `fz-16` to use em-based sizing.
 
 
 ## Books & Bundles, Spring/Summer 2017

@@ -37,7 +37,7 @@ $bps: (
   s:  550px,
   m:  700px,
   l:  850px,
-  xl: 1000px
+  xl: 1100px
 );
 @function bp($width) {
   @return map-get($bps, $width);

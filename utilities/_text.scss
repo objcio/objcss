@@ -18,7 +18,7 @@
 
 }
 
-.fz-16    { font-size: 16px; }
+.fz-16    { font-size: em(16); }
 .fz-nav   { font-size: em(19, $em-base); }
 .fz-title { @include fz-title; }
 
@@ -36,6 +36,7 @@
 .lh-100 { line-height: 1.00; }
 .lh-110 { line-height: 1.10; }
 .lh-125 { line-height: 1.25; }
+.lh-135 { line-height: 1.35; }
 .lh-140 { line-height: 1.40; }
 
 .list-circle { list-style-type: circle; }
@@ -43,7 +44,10 @@
 .list-square { list-style-type: square; }
 .list-decimal { list-style-type: decimal; }
 
+
+
 .nowrap { white-space: nowrap; }
 
 .text-overflow-ellipsis { text-overflow: ellipsis; }
 
+.hyphens { hyphens: auto; }

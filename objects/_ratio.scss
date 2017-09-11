@@ -1,6 +1,7 @@
 .ratio {
   // Ratios need parenthesis otherwise libsass doesn't see them as numbers
   $ratios: (
+    '22\\/10':       (22/10),
     '16\\/10':       (16/10),
     '16\\/9':        (16/9),
     '1\\/1':         1,
