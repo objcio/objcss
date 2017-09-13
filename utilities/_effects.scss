@@ -10,6 +10,10 @@
   transition-timing-function: ease-in-out;
 }
 
+.transition-scale {
+  transition-property: transform;
+}
+
 .transition-color {
   transition-property: color;
 }

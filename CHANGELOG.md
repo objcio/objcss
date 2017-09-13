@@ -16,6 +16,8 @@
 * Added `+++` variants of negative spacing to Spacing utility.
 * Added Gradient utility `gradient-episode-color` for ST episode tint effect.
 * Added Text utilities `lh-135` and `hyphens`.
+* Added Sizing utility `width-1/6`.
+* Added Effect utility `transition-scale`.
 * Changed Text utility `fz-16` to use em-based sizing.
 
 
