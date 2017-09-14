@@ -46,6 +46,13 @@
 .hover-cascade:hover .hover-cascade__block      { display: block; }
 .hover-cascade:hover .hover-cascade__inline     { display: inline; }
 
-.hover-scale:hover {
-  transform: scale(1.05);
+
+.hover-scale {
+  will-change: transform; // enable GPU acceleration
+  &:hover { transform: scale(1.05); }
+}
+
+.hover-scale-1\.25x {
+  will-change: transform; // enable GPU acceleration
+  &:hover { transform: scale(1.25); }
 }

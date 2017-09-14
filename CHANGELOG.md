@@ -19,6 +19,11 @@
 * Added Sizing utility `width-1/6`.
 * Added Effect utility `transition-scale`.
 * Changed Text utility `fz-16` to use em-based sizing.
+* Renamed Effect utility `transition-scale` to `transition-transform`.
+* Added Effect utility `hover-scale-1.25x`
+* Changed Effect utilities `hover-*` to force GPU animation.
+* Added Icon utility `icon-46`.
+* Added Text utility `text-shadow-25`.
 
 
 ## Books & Bundles, Spring/Summer 2017
