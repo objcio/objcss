@@ -5,24 +5,9 @@
 .color-current       { color: currentColor; }
 .color-inherit       { color: inherit; }
 
-.color-gray-10       { color: gray(10%); }
-.color-gray-15       { color: gray(15%); }
-.color-gray-20       { color: gray(20%); }
-.color-gray-25       { color: gray(25%); }
-.color-gray-30       { color: gray(30%); }
-.color-gray-35       { color: gray(35%); }
-.color-gray-40       { color: gray(40%); }
-.color-gray-45       { color: gray(45%); }
-.color-gray-50       { color: gray(50%); }
-.color-gray-55       { color: gray(55%); }
-.color-gray-60       { color: gray(60%); }
-.color-gray-65       { color: gray(65%); }
-.color-gray-70       { color: gray(70%); }
-.color-gray-75       { color: gray(75%); }
-.color-gray-80       { color: gray(80%); }
-.color-gray-85       { color: gray(85%); }
-.color-gray-90       { color: gray(90%); }
-.color-gray-95       { color: gray(95%); }
+@each $gray-shade in $gray-shades {
+  .color-gray-#{$gray-shade} { color: gray($gray-shade); }
+}
 
 .color-darken-65 { color: rgba(0, 0, 0, 0.65); }
 .color-darken-50 { color: rgba(0, 0, 0, 0.50); }
@@ -41,26 +26,9 @@
 // Basic Background Colors
 //
 
-.bgcolor-gray-10       { background-color: gray(10%); }
-.bgcolor-gray-15       { background-color: gray(15%); }
-.bgcolor-gray-20       { background-color: gray(20%); }
-.bgcolor-gray-25       { background-color: gray(25%); }
-.bgcolor-gray-30       { background-color: gray(30%); }
-.bgcolor-gray-35       { background-color: gray(35%); }
-.bgcolor-gray-40       { background-color: gray(40%); }
-.bgcolor-gray-45       { background-color: gray(45%); }
-.bgcolor-gray-50       { background-color: gray(50%); }
-.bgcolor-gray-55       { background-color: gray(55%); }
-.bgcolor-gray-60       { background-color: gray(60%); }
-.bgcolor-gray-65       { background-color: gray(65%); }
-.bgcolor-gray-70       { background-color: gray(70%); }
-.bgcolor-gray-75       { background-color: gray(75%); }
-.bgcolor-gray-80       { background-color: gray(80%); }
-.bgcolor-gray-85       { background-color: gray(85%); }
-.bgcolor-gray-90       { background-color: gray(90%); }
-.bgcolor-gray-95       { background-color: gray(95%); }
-.bgcolor-gray-96       { background-color: gray(96%); }
-.bgcolor-gray-97       { background-color: gray(97%); }
+@each $gray-shade in $gray-shades {
+  .bgcolor-gray-#{$gray-shade} { background-color: gray($gray-shade); }
+}
 
 .bgcolor-darken-65 { background-color: rgba(0, 0, 0, 0.65); }
 .bgcolor-darken-50 { background-color: rgba(0, 0, 0, 0.50); }

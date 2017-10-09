@@ -46,6 +46,13 @@ $bps: (
 
 
 //
+// Shades of Gray Color
+//
+$gray-shades: (10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95);
+
+
+
+//
 // Named Colors
 //
 $colors: (
@@ -76,7 +83,8 @@ $colors: (
 $bgcolors: (
   'code-block':  gray(97%),
   'code-inline': gray(95%),
-  'gray':        #F8F8F8,
+  'pale-gray':   gray(97%),
+  'pale-blue':   #FAFDFF,
 );
 @function bgcolor($name) {
   @return map-get($bgcolors, $name);
