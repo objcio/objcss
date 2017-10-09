@@ -40,6 +40,11 @@ $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
   @extend %pattern;
   background-image: $arrow-pattern-shade;
 }
+.pattern-shade-darker {
+  @extend %pattern;
+  background-image: arrow-pattern($arrows: #000000, $opacity: 0.2);
+}
+
 // 2.2. White translucent
 .pattern-light {
   @extend %pattern;

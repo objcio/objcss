@@ -20,7 +20,10 @@
   }
 }
 
+.hover-cascade:hover .hover-cascade__underline,
 .hover-underline:hover { text-decoration: underline; }
+
+.hover-cascade:hover .hover-cascade__border-bottom,
 .hover-border-bottom:hover { border-bottom: solid 1px; }
 
 .hover-cascade:hover .hover-cascade__color      { color: inherit; }

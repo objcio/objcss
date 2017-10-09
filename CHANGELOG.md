@@ -6,7 +6,7 @@
 
 * Changed XL breakpoint to 1100px.
 * Added a `$gray-shades` variable with all shades of gray used to generate `.color-gray-` and `.bgcolor-gray-` utilities.
-* Added `'pale-gray'` and `'pale-blue'` background colors.
+* Added `pale-gray`, `pale-blue`, and `night-blue` background colors.
 
 ### Namespaces
 
@@ -36,6 +36,9 @@
 * Added Display utilities `inline-descendants` and `inline-children`. These make its descendants/children become inline elements. Together with `nowrap` and `overflow-hidden`, it can clip a sequence of paragraphs to a single line of text.
 * Added breakpoint prefixing to negative Spacing utilities.
 * Change Hover color utilities to use the same $colors and $bgcolors maps used in `.color-` and `.bgcolor-` utilities, for consistency. As a result, `hover-bgcolor-gray-97` was removed, replaced with the named background color `pale-gray`.
+* Added Icon utility `icon-40`.
+* Added Hover utilities `.hover-cascade__underline` and `.hover-cascade__border-bottom`.
+* Added Pattern utility `pattern-shade-darker`.
 
 
 ## Books & Bundles, Spring/Summer 2017

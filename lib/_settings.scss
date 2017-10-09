@@ -85,6 +85,7 @@ $bgcolors: (
   'code-inline': gray(95%),
   'pale-gray':   gray(97%),
   'pale-blue':   #FAFDFF,
+  'night-blue':  #001B29,
 );
 @function bgcolor($name) {
   @return map-get($bgcolors, $name);
