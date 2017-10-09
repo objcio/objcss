@@ -155,7 +155,7 @@
   color: white;
 
   background-color: $c-blue;
-  &:hover, &:focus { color: $c-orange; }
+  &:hover, &:focus { background-color: $c-orange; }
 
   &--tight {
     padding:     .7em;
