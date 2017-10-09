@@ -28,6 +28,7 @@
 * Changed Effect utilities `hover-*` to force GPU animation.
 * Added Icon utility `icon-46`.
 * Added Text utility `text-shadow-25`.
+* Added Border utilities `border-color-subtle-blue`, `border-color-lighten-10`.
 
 
 ## Books & Bundles, Spring/Summer 2017
