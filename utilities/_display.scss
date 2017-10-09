@@ -88,7 +88,8 @@
   line-height: normal;
 }
 
-.cursor-pointer { cursor: pointer; }
+.cursor-pointer     { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
 
 .js .js-hide,
 .no-js .no-js-hide { display: none; }

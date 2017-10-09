@@ -39,6 +39,7 @@
 * Added Icon utility `icon-40`.
 * Added Hover utilities `.hover-cascade__underline` and `.hover-cascade__border-bottom`.
 * Added Pattern utility `pattern-shade-darker`.
+* Added Display utility `cursor-not-allowed`.
 
 
 ## Books & Bundles, Spring/Summer 2017
