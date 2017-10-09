@@ -6,6 +6,10 @@
 
 * Changed XL breakpoint to 1100px.
 
+### Namespaces
+
+* Added an Inline Code namespace, for paragraphs or section with inline `<code>` tags.
+
 ### Components
 
 * Added `tight` variant to Button.
