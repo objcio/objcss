@@ -19,6 +19,9 @@
   #{$each-bp}position-nw { top: 0; left: 0; }
 }
 
+.inline-descendants * { display: inline; }
+.inline-children > *  { display: inline; }
+
 .position-outside-n { bottom: 100%; }
 .position-outside-e { left:   100%; }
 .position-outside-s { top:    100%; }
