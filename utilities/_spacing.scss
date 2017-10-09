@@ -167,23 +167,24 @@
 //
 // Negative Margin
 //
+@include each-bp($max-width: false) {
+  #{$each-bp}n-mt       { margin-top: -1 * spacing(); }
+  #{$each-bp}n-mt\+     { margin-top: -1 * spacing('+'); }
+  #{$each-bp}n-mt\+\+   { margin-top: -1 * spacing('++'); }
+  #{$each-bp}n-mt\+\+\+ { margin-top: -1 * spacing('+++'); }
 
-.n-mt       { margin-top: -1 * spacing(); }
-.n-mt\+     { margin-top: -1 * spacing('+'); }
-.n-mt\+\+   { margin-top: -1 * spacing('++'); }
-.n-mt\+\+\+ { margin-top: -1 * spacing('+++'); }
+  #{$each-bp}n-mr       { margin-right: -1 * spacing(); }
+  #{$each-bp}n-mr\+     { margin-right: -1 * spacing('+'); }
+  #{$each-bp}n-mr\+\+   { margin-right: -1 * spacing('++'); }
+  #{$each-bp}n-mr\+\+\+ { margin-right: -1 * spacing('+++'); }
 
-.n-mr       { margin-right: -1 * spacing(); }
-.n-mr\+     { margin-right: -1 * spacing('+'); }
-.n-mr\+\+   { margin-right: -1 * spacing('++'); }
-.n-mr\+\+\+ { margin-right: -1 * spacing('+++'); }
+  #{$each-bp}n-mb       { margin-bottom: -1 * spacing(); }
+  #{$each-bp}n-mb\+     { margin-bottom: -1 * spacing('+'); }
+  #{$each-bp}n-mb\+\+   { margin-bottom: -1 * spacing('++'); }
+  #{$each-bp}n-mb\+\+\+ { margin-bottom: -1 * spacing('+++'); }
 
-.n-mb       { margin-bottom: -1 * spacing(); }
-.n-mb\+     { margin-bottom: -1 * spacing('+'); }
-.n-mb\+\+   { margin-bottom: -1 * spacing('++'); }
-.n-mb\+\+\+ { margin-bottom: -1 * spacing('+++'); }
-
-.n-ml       { margin-left: -1 * spacing(); }
-.n-ml\+     { margin-left: -1 * spacing('+'); }
-.n-ml\+\+   { margin-left: -1 * spacing('++'); }
-.n-ml\+\+\+ { margin-left: -1 * spacing('+++'); }
+  #{$each-bp}n-ml       { margin-left: -1 * spacing(); }
+  #{$each-bp}n-ml\+     { margin-left: -1 * spacing('+'); }
+  #{$each-bp}n-ml\+\+   { margin-left: -1 * spacing('++'); }
+  #{$each-bp}n-ml\+\+\+ { margin-left: -1 * spacing('+++'); }
+}

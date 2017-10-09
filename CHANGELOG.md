@@ -32,6 +32,7 @@
 * Changed Button component to work better with `<button>` elements.
 * Added Display utilities `position-stretch-h` and `position-stretch-v`, to complement already existing `position-stretch`.
 * Added Display utilities `inline-descendants` and `inline-children`. These make its descendants/children become inline elements. Together with `nowrap` and `overflow-hidden`, it can clip a sequence of paragraphs to a single line of text.
+* Added breakpoint prefixing to negative Spacing utilities.
 
 
 ## Books & Bundles, Spring/Summer 2017
