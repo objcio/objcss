@@ -137,7 +137,9 @@
 
 .button {
   display: inline-block;
+  border: 0;
   margin: 0;
+  cursor: pointer;
 
   // Use the same size as the bordered-button, accounting
   // for the 2px border which isn't present here.
@@ -193,6 +195,7 @@
 .bordered-button {
   display: inline-block;
   margin: 0;
+  cursor: pointer;
 
   padding:     .9em;
   padding-top: .8em;

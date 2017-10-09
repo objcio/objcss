@@ -29,6 +29,7 @@
 * Added Icon utility `icon-46`.
 * Added Text utility `text-shadow-25`.
 * Added Border utilities `border-color-subtle-blue`, `border-color-lighten-10`.
+* Changed Button component to work better with `<button>` elements.
 
 
 ## Books & Bundles, Spring/Summer 2017
