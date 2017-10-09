@@ -24,6 +24,16 @@
 .position-outside-s { top:    100%; }
 .position-outside-w { right:  100%; }
 
+.position-stretch-h {
+  left: 0;
+  right: 0;
+}
+
+.position-stretch-v {
+  top: 0;
+  bottom: 0;
+}
+
 .position-stretch {
   top: 0;
   left: 0;
