@@ -215,6 +215,18 @@
     }
   }
 
+  // Variant: --fit-code
+  // Fits the code blocks to the left/right edges of the container
+  &--fit-code pre {
+    @include bp-from(l) {
+      margin-right: 0;
+      width: 100%;
+      width: calc(100% + (2 * (1em/.85)));
+      max-width: none;
+      min-width: auto;
+    }
+  }
+
   // Prevent code blocks from going out of bounds
   pre > code,
   &--preview .code {

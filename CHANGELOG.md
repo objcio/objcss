@@ -12,6 +12,7 @@
 ### Namespaces
 
 * Added an Inline Code namespace, for paragraphs or section with inline `<code>` tags.
+* Added a `--fit-code` modifier to the Text namespace.
 
 ### Components
 
