@@ -4,7 +4,8 @@
 
 ### Globals, Settings, Setup
 
-* Changed XL breakpoint to 1100px.
+* Changed XL breakpoint to 1100px (from 1000px).
+* Changed L breakpoint to 900px (from 850px).
 * Added a `$gray-shades` variable with all shades of gray used to generate `.color-gray-` and `.bgcolor-gray-` utilities.
 * Added `pale-gray`, `pale-blue`, and `night-blue` background colors.
 
@@ -40,6 +41,9 @@
 * Added Hover utilities `.hover-cascade__underline` and `.hover-cascade__border-bottom`.
 * Added Pattern utility `pattern-shade-darker`.
 * Added Display utility `cursor-not-allowed`.
+* Added Ratio variant `ratio--2/1`.
+* Added Sizing utilities for `min-height` (`-1` to `-10`, plus `full`).
+* Remove bug fix for Chrome 44 on `flex-auto`.
 
 
 ## Books & Bundles, Spring/Summer 2017
