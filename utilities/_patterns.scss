@@ -89,3 +89,13 @@ $arrow-pattern-light: arrow-pattern($arrows: #FFFFFF, $opacity: 0.2);
   }
 
 }
+
+
+//
+// 4. Pattern Illustration
+//
+.pattern-illustration {
+  background-size: 50%;
+  background-attachment: fixed;
+  background-color: #F2F4F2;
+}

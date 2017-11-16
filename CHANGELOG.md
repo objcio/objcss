@@ -23,7 +23,7 @@
 ### Utilities
 
 * Added `+++` variants of negative spacing to Spacing utility.
-* Added Gradient utility `gradient-episode-color` for ST episode tint effect.
+* Added Gradient utility `gradient-episode-black` as used on episode thumbnail to create a darker shade at its bottom edge.
 * Added Text utilities `lh-135` and `hyphens`.
 * Added Sizing utility `width-1/6`.
 * Added Effect utility `transition-scale`.
@@ -32,7 +32,7 @@
 * Added Effect utility `hover-scale-1.25x`
 * Changed Effect utilities `hover-*` to force GPU animation.
 * Added Icon utility `icon-46`.
-* Added Text utility `text-shadow-25`.
+* Added Text utility `text-shadow-20`.
 * Added Border utilities `border-color-subtle-blue`, `border-color-lighten-10`.
 * Changed Button component to work better with `<button>` elements.
 * Added Display utilities `position-stretch-h` and `position-stretch-v`, to complement already existing `position-stretch`.
@@ -45,6 +45,7 @@
 * Added Display utility `cursor-not-allowed`.
 * Added Ratio variant `ratio--2/1`.
 * Added Sizing utilities for `min-height` (`-1` to `-10`, plus `full`).
+* Added Pattern utility `pattern-illustration` for tiling collection illustrations.
 * Remove bug fix for Chrome 44 on `flex-auto`.
 
 
