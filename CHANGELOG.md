@@ -4,10 +4,11 @@
 
 ### Globals, Settings, Setup
 
-* Changed XL breakpoint to 1100px (from 1000px).
-* Changed L breakpoint to 900px (from 850px).
+* Added a new theme: `collection`.
 * Added a `$gray-shades` variable with all shades of gray used to generate `.color-gray-` and `.bgcolor-gray-` utilities.
 * Added `pale-gray`, `pale-blue`, and `night-blue` background colors.
+* Changed XL breakpoint to 1100px (from 1000px).
+* Changed L breakpoint to 900px (from 850px).
 
 ### Namespaces
 

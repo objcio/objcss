@@ -9,6 +9,10 @@ $themes: map-merge($themes, (
     'main':       color('blue'),
     'highlight':  color('orange'),
     'nav':        color('blue'),
+  ),
+  'collection': (
+    'main':      #FF8C61,
+    'highlight': #58D897
   )
 ));
 
