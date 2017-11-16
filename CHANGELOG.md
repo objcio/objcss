@@ -18,6 +18,7 @@
 
 * Added `tight` variant to Button.
 * Added a 22:10 variant to Ratio.
+* Added an Offset component, to create an offset container and header, as used in Collection pages.
 
 ### Utilities
 

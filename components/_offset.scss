@@ -1,0 +1,21 @@
+.offset-content {
+  margin-left: 10%;
+}
+
+.offset-header {
+  position: relative;
+  margin-top: 20%;
+
+  &::before {
+    content: '';
+    display: block;
+    background-color: inherit;
+    width: 9999em;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    
+  }
+}
