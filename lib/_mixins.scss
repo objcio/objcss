@@ -6,15 +6,6 @@
   }
 }
 
-@function svg-data-uri($svg) {
-  @return url('data:image/svg+xml;utf8,'+$svg);
-}
-
-@function arrow-pattern($fill: 'none', $arrows: 'none', $opacity: 1) {
-  $pattern: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240"><g fill="none" fill-rule="evenodd"><path fill="' + $fill + '" d="M0 0h300v240H0z"/><path fill="' + $arrows + '" fill-opacity="' + $opacity + '" d="M83 53l-5 4.955L56 35.5V93h-7V35.5L27 57.955 22 53l30.5-31L83 53zm66 15l-5-4.955L122 85.5V28h-7v57.5L93 63.045 88 68l30.5 31L149 68zm63 104l-5 4.955-22-22.455V212h-7v-57.5l-22 22.455-5-4.955 30.5-31 30.5 31zm66 15l-5-4.955-22 22.455V147h-7v57.5l-22-22.455-5 4.955 30.5 31 30.5-31z"/></g></svg>';
-  @return svg-data-uri($pattern);
-}
-
 @mixin fz-title {
   word-wrap: break-word;
   font-size: modular(3);
