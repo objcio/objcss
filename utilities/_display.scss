@@ -3,6 +3,8 @@
   #{$each-bp}inline       { display: inline; }
   #{$each-bp}inline-block { display: inline-block; }
   #{$each-bp}hide         { display: none; }
+  #{$each-bp}flex         { display: flex; }
+  #{$each-bp}inline-flex  { display: inline-flex; }
 
   #{$each-bp}absolute { position: absolute; }
   #{$each-bp}relative { position: relative; }

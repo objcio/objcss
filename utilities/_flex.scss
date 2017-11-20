@@ -1,8 +1,5 @@
 @include each-bp($max-width: false) {
 
-  #{$each-bp}flex { display: flex; }
-  #{$each-bp}inline-flex { display: inline-flex; }
-
   #{$each-bp}flex-1 { flex: 1; }
   #{$each-bp}flex-2 { flex: 2; }
   #{$each-bp}flex-3 { flex: 3; }

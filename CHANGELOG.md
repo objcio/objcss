@@ -48,6 +48,7 @@
 * Added Sizing utilities for `min-height` (`-1` to `-10`, plus `full`).
 * Added Pattern utility `pattern-illustration` for tiling collection illustrations.
 * Remove bug fix for Chrome 44 on `flex-auto`.
+* Moved `flex` and `flex-inline` from Flex to Display utilities file. This is so responsive precedence works properly.
 
 
 ## Books & Bundles, Spring/Summer 2017
