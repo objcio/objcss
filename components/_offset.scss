@@ -1,5 +1,8 @@
 .offset-content {
-  margin-left: 10%;
+  @extend .p-edges;
+  @include bp-from(l)  {
+    margin-left: 10%;
+  }
 }
 
 .offset-header {
