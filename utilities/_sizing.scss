@@ -44,7 +44,11 @@
 .max-width-8    { max-width: 40em; }
 .max-width-9    { max-width: 48em; }
 .max-width-10   { max-width: 64em; }
-.max-width-full { max-width: 100%; }
+
+@include each-bp {
+  #{$each-bp}max-width-none { max-width: none; }
+  #{$each-bp}max-width-full { max-width: 100%; }
+}
 
 
 

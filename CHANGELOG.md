@@ -49,6 +49,8 @@
 * Added Pattern utility `pattern-illustration` for tiling collection illustrations.
 * Remove bug fix for Chrome 44 on `flex-auto`.
 * Moved `flex` and `flex-inline` from Flex to Display utilities file. This is so responsive precedence works properly.
+* Breakpoint-prefixed Sizing utility `max-width-full`.
+* Added Sizing utility `max-width-none`, breakpoint-prefixed.
 
 
 ## Books & Bundles, Spring/Summer 2017
