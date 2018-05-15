@@ -117,7 +117,8 @@ $books: map-keys($book-colors);
 $bundle-colors: (
   'complete-collection': #F8BA5E, // yellow
   'swift-essentials':    #6BCAD6, // blue
-  'everything-swift':    #C97ECE  // purple
+  'everything-swift':    #C97ECE, // purple
+  'app-development':     #9BCC5C  // green
 );
 
 $bundles: map-keys($bundle-colors);
