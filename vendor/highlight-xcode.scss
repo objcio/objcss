@@ -112,9 +112,13 @@ XCode style (c) Angel Garcia <angelgarcia.mail@gmail.com>
   .hljs-built_in,
   .hljs-setting,
   .hljs-params,
-  .hljs-clojure .hljs-attribute {
+  .hljs-clojure .hljs-attribute,
+  .swift .hljs-type,
+  {
     /* 5 'dark purple' */ color: #c56021; /*rgb(92,38,153)*/
+	color: #5C2699;
   }
+
 
   .hljs-variable {
    /* 6 'teal' */ color: #23a9db; /*rgb(63,110,116)*/
