@@ -98,7 +98,8 @@ $book-colors: (
   'core-data':              ('top': #059ADF, 'bottom': #2E3B92),
   'advanced-swift':         ('top': #DD1388, 'bottom': #80288E),
   'optimizing-collections': ('top': #00CC96, 'bottom': #068DC2),
-  'app-architecture':       ('top': #BECD0C, 'bottom': #49910F)
+  'app-architecture':       ('top': #BECD0C, 'bottom': #49910F),
+  'thinking-in-swiftui':    ('top': #5FD0DA, 'bottom': #006064)
 );
 
 $books: map-keys($book-colors);
